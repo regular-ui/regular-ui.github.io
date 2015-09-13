@@ -15,9 +15,10 @@
 // 该段代码是选择主题用的，与渲染有关，所以必须放前面。
 var relativePath = '../';
 var themes = [
-    {id: 1, name: 'default'},
-    {id: 2, name: 'flat'},
-    {id: 3, name: 'bootstrap'}
+    {name: 'simple'},
+    {name: 'default'},
+    {name: 'flat'},
+    {name: 'bootstrap'}
 ];
 
 var selectedTheme;
@@ -28,7 +29,7 @@ if(localStorage['selectedTheme']) {
             break;
         }
 } else {
-    selectedTheme = themes[0];
+    selectedTheme = themes[1];
 }
 
 var themeCSS = document.getElementById('j-themeCSS');
@@ -103,11 +104,12 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         <h2>后续开发<small> Todo</small></h2>
         
         <ul>
+<li>一大波组件</li>
 <li>兼容性测试</li>
 <li>代码优化</li>
 <li>文档优化</li>
+<li>移动端开发</li>
 <li>动画+特效</li>
-<li>一大波组件</li>
 </ul>
 <p>尽请期待...</p>
 
@@ -138,7 +140,7 @@ var themeSelect = new RGUI.Select2({
     localStorage['selectedTheme'] = $event.selected.name;
 });
 
-// 生成tab
+// 生成tabs
 (function() {
     var $examples = document.getElementsByClassName('m-example');
 
@@ -175,11 +177,11 @@ var themeSelect = new RGUI.Select2({
 
         new RGUI.Component({
             template: RGUI._.multiline(function(){/*
-<tab>
+<tabs>
     {#list source as item}
-    <tabPane title={item.title}><div r-html={item.content}></div></tabPane>
+    <tab title={item.title}><div r-html={item.content}></div></tab>
     {/list}
-</tab>
+</tabs>
             */}),
             data: {
                 source: source

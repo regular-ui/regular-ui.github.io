@@ -15,9 +15,10 @@
 // 该段代码是选择主题用的，与渲染有关，所以必须放前面。
 var relativePath = '../';
 var themes = [
-    {id: 1, name: 'default'},
-    {id: 2, name: 'flat'},
-    {id: 3, name: 'bootstrap'}
+    {name: 'simple'},
+    {name: 'default'},
+    {name: 'flat'},
+    {name: 'bootstrap'}
 ];
 
 var selectedTheme;
@@ -28,7 +29,7 @@ if(localStorage['selectedTheme']) {
             break;
         }
 } else {
-    selectedTheme = themes[0];
+    selectedTheme = themes[1];
 }
 
 var themeCSS = document.getElementById('j-themeCSS');
@@ -218,6 +219,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <div class="m-example"></div>
 
 <pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">datePicker</span> <span class="cm-tagcm-bracket">/&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">datePicker</span> <span class="cm-attribute">date</span>=<span class="cm-string">&quot;2008-08-08&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
 </code></pre>
 <h4 id="-">禁用组件</h4>
 <div class="m-example"></div>
@@ -228,14 +230,31 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <div class="m-example"></div>
 
 <pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">datePicker</span> <span class="cm-attribute">minDate</span>=<span class="cm-attribute">{minDate}</span> <span class="cm-attribute">maxDate</span>=<span class="cm-attribute">{maxDate}</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">datePicker</span> <span class="cm-attribute">minDate</span>=<span class="cm-string">&quot;2008-08-08&quot;</span> <span class="cm-attribute">maxDate</span>=<span class="cm-string">&quot;2008-08-16&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
 </code></pre>
 <pre class="lang-javascript"><code><span class="cm-keyword">var</span> <span class="cm-variable">component</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">RGUI</span>.<span class="cm-property">Component</span>({
     <span class="cm-property">template</span>: <span class="cm-variable">template</span>,
     <span class="cm-property">data</span>: {
-        <span class="cm-property">minDate</span>: <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-keyword">new</span> <span class="cm-variable">Date</span>().<span class="cm-property">getTime</span>() <span class="cm-operator">+</span> <span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">24</span><span class="cm-operator">*</span><span class="cm-number">3600</span><span class="cm-operator">*</span><span class="cm-number">1000</span>),
-        <span class="cm-property">maxDate</span>: <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-keyword">new</span> <span class="cm-variable">Date</span>().<span class="cm-property">getTime</span>() <span class="cm-operator">+</span> <span class="cm-number">7</span><span class="cm-operator">*</span><span class="cm-number">24</span><span class="cm-operator">*</span><span class="cm-number">3600</span><span class="cm-operator">*</span><span class="cm-number">1000</span>)
+        <span class="cm-property">minDate</span>: <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-operator">+</span><span class="cm-keyword">new</span> <span class="cm-variable">Date</span> <span class="cm-operator">+</span> <span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-number">24</span><span class="cm-operator">*</span><span class="cm-number">3600</span><span class="cm-operator">*</span><span class="cm-number">1000</span>),
+        <span class="cm-property">maxDate</span>: <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>(<span class="cm-operator">+</span><span class="cm-keyword">new</span> <span class="cm-variable">Date</span> <span class="cm-operator">+</span> <span class="cm-number">7</span><span class="cm-operator">*</span><span class="cm-number">24</span><span class="cm-operator">*</span><span class="cm-number">3600</span><span class="cm-operator">*</span><span class="cm-number">1000</span>)
     }
 });
+</code></pre>
+<h4 id="-">数据绑定</h4>
+<div class="m-example"></div>
+
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">datePicker</span> <span class="cm-attribute">date</span>=<span class="cm-attribute">{date}</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">datePicker</span> <span class="cm-attribute">date</span>=<span class="cm-attribute">{date}</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tagcm-bracket">&gt;</span>当前选择的日期为：{date | format: &#39;yyyy-MM-dd&#39;}<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tagcm-bracket">&gt;</span>
+</code></pre>
+<h4 id="-">事件</h4>
+<p>请打开浏览器的控制台查看结果。</p>
+<div class="m-example"></div>
+
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">datePicker</span>
+    <span class="cm-attribute">on-toggle</span>=<span class="cm-attribute">{console.log(</span><span class="cm-stringcm-error">&#39;on-toggle:&#39;</span><span class="cm-attribute">,</span> <span class="cm-stringcm-error">&#39;$event.open:&#39;</span><span class="cm-attribute">,</span> <span class="cm-attribute">$event.open)}</span>
+    <span class="cm-attribute">on-select</span>=<span class="cm-attribute">{console.log(</span><span class="cm-stringcm-error">&#39;on-select:&#39;</span><span class="cm-attribute">,</span> <span class="cm-stringcm-error">&#39;$event.date:&#39;</span><span class="cm-attribute">,</span> <span class="cm-attribute">$event.date)}</span>
+    <span class="cm-attribute">on-change</span>=<span class="cm-attribute">{console.log(</span><span class="cm-stringcm-error">&#39;on-change:&#39;</span><span class="cm-attribute">,</span> <span class="cm-stringcm-error">&#39;$event.date:&#39;</span><span class="cm-attribute">,</span> <span class="cm-attribute">$event.date)}</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span>
 </code></pre>
 
         <h3>API</h3>
@@ -259,11 +278,11 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
             
             <tr><td class="f-wsn"><code>data.date</code></td><td class="f-wsn">object</td><td class="f-wsn"><code>null</code></td><td>当前选择的日期</td></tr>
             
-            <tr><td class="f-wsn"><code>data.placeholder</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;请输入&#39;</code></td><td>文本框默认文字</td></tr>
+            <tr><td class="f-wsn"><code>data.placeholder</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;请输入&#39;</code></td><td>文本框的占位文字</td></tr>
             
-            <tr><td class="f-wsn"><code>data.minDate</code></td><td class="f-wsn">Date</td><td class="f-wsn"><code>null</code></td><td>最小日期，如果为空则不限制</td></tr>
+            <tr><td class="f-wsn"><code>data.minDate</code></td><td class="f-wsn">Date | string</td><td class="f-wsn"><code>null</code></td><td>最小日期，如果为空则不限制</td></tr>
             
-            <tr><td class="f-wsn"><code>data.maxDate</code></td><td class="f-wsn">Date</td><td class="f-wsn"><code>null</code></td><td>最大日期，如果为空则不限制</td></tr>
+            <tr><td class="f-wsn"><code>data.maxDate</code></td><td class="f-wsn">Date | string</td><td class="f-wsn"><code>null</code></td><td>最大日期，如果为空则不限制</td></tr>
             
             <tr><td class="f-wsn"><code>data.readonly</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>false</code></td><td>是否只读</td></tr>
             
@@ -279,23 +298,40 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <div id="j-options"></div>
 
 
-<h4>Methods</h4>
-
-<h5>datePicker.select(date)</h5>
-<p>选择一个日期</p>
-<table>
-    <thead>
-        <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
-    </thead>
-    <tbody>
-        
+    <h4>Methods</h4>
+    
+    
+    <h5>datePicker.select(date)</h5>
+    <p>选择一个日期</p>
+    <table>
+        <thead>
+            <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+        </thead>
+        <tbody>
             
-            <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">Date</td><td class="f-wsn"><code>null</code></td><td>选择的日期</td></tr>
+                
+                <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">Date</td><td class="f-wsn"><code>null</code></td><td>选择的日期</td></tr>
+                
             
-        
-    </tbody>
-</table>
-
+        </tbody>
+    </table>
+    
+    
+    <h5>datePicker.isOutOfRange(date)</h5>
+    <p>是否超出规定的日期范围</p>
+    <table>
+        <thead>
+            <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+        </thead>
+        <tbody>
+            
+                
+                <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">Date</td><td class="f-wsn"></td><td>待测的日期</td></tr>
+                
+            
+        </tbody>
+    </table>
+    
 
 <div id="j-methods"></div>
 
@@ -303,93 +339,114 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <div id="j-staticMethods"></div>
 
 
-<h4>Inherited Methods</h4>
-
-<h5>datePicker.select(item)</h5>
-<p>选择某一项</p>
-<table>
-    <thead>
-        <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
-    </thead>
-    <tbody>
-        
-            
-            <tr><td class="f-wsn"><code>item</code></td><td class="f-wsn">object</td><td class="f-wsn"></td><td>选择项</td></tr>
-            
-        
-    </tbody>
-</table>
-
-<h5>datePicker.toggle(open)</h5>
-<p>在展开/收起状态之间切换</p>
-<table>
-    <thead>
-        <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
-    </thead>
-    <tbody>
-        
-            
-            <tr><td class="f-wsn"><code>open</code></td><td class="f-wsn">boolean</td><td class="f-wsn"></td><td>展开/收起</td></tr>
-            
-        
-    </tbody>
-</table>
-
-<h5>datePicker.$updateSource()</h5>
-<p>从service中更新数据源</p>
-<table>
-    <thead>
-        <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
-    </thead>
-    <tbody>
-        
-            <tr><td class="f-tac" colspan="4">无参数</td></tr>
-        
-    </tbody>
-</table>
-
+    <h4>Inherited Methods</h4>
+    
+    
+    
+        <h5><span class="u-text u-text-muted">@override</span> <del>datePicker.select(item)</del></h5>
+    
+    
+    
+    
+        <h5>datePicker.toggle(open)</h5>
+        <p>在展开/收起状态之间切换</p>
+        <table>
+            <thead>
+                <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+            </thead>
+            <tbody>
+                
+                    
+                    <tr><td class="f-wsn"><code>open</code></td><td class="f-wsn">boolean</td><td class="f-wsn"></td><td>展开/收起</td></tr>
+                    
+                
+            </tbody>
+        </table>
+    
+    
+    
+    
+        <h5>datePicker.$updateSource()</h5>
+        <p>从service中更新数据源</p>
+        <table>
+            <thead>
+                <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+            </thead>
+            <tbody>
+                
+                    <tr><td class="f-tac" colspan="4">无参数</td></tr>
+                
+            </tbody>
+        </table>
+    
+    
 
 <div id="j-inheritedMethods"></div>
 
 
-<h4>Events</h4>
-
-<h5>datePicker.$on('select')</h5>
-<p>选择某一项时触发</p>
-<table>
-    <thead>
-        <tr><th>属性</th><th>类型</th><th>描述</th></tr>
-    </thead>
-    <tbody>
-        
+    <h4>Events</h4>
+    
+    
+    <h5>datePicker.$on('change')</h5>
+    <p>日期改变时触发</p>
+    <table>
+        <thead>
+            <tr><th>属性</th><th>类型</th><th>描述</th></tr>
+        </thead>
+        <tbody>
             
-            <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">object</td><td class="f-wsn">当前选择项</td></tr>
+                
+                <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">object</td><td class="f-wsn">改变后的日期</td></tr>
+                
             
-        
-    </tbody>
-</table>
-
+        </tbody>
+    </table>
+    
+    
+    <h5>datePicker.$on('select')</h5>
+    <p>选择某一项时触发</p>
+    <table>
+        <thead>
+            <tr><th>属性</th><th>类型</th><th>描述</th></tr>
+        </thead>
+        <tbody>
+            
+                
+                <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">object</td><td class="f-wsn">当前选择项</td></tr>
+                
+            
+        </tbody>
+    </table>
+    
 
 <div id="j-events"></div>
 
 
-<h4>Inherited Events</h4>
-
-<h5>datePicker.$on('select')</h5>
-<p>选择某一项时触发</p>
-<table>
-    <thead>
-        <tr><th>属性</th><th>类型</th><th>描述</th></tr>
-    </thead>
-    <tbody>
-        
-            
-            <tr><td class="f-wsn"><code>selected</code></td><td class="f-wsn">object</td><td class="f-wsn">当前选择项</td></tr>
-            
-        
-    </tbody>
-</table>
-
+    <h4>Inherited Events</h4>
+    
+    
+    
+        <h5><span class="u-text u-text-muted">@override</span> <del>datePicker.$on('select')</del></h5>
+    
+    
+    
+    
+        <h5>datePicker.$on('toggle')</h5>
+        <p>展开/收起时触发</p>
+        <table>
+            <thead>
+                <tr><th>属性</th><th>类型</th><th>描述</th></tr>
+            </thead>
+            <tbody>
+                
+                    
+                    <tr><td class="f-wsn"><code>open</code></td><td class="f-wsn">object</td><td class="f-wsn">展开/收起状态</td></tr>
+                    
+                
+            </tbody>
+        </table>
+    
+    
 
 <div id="j-inheritedEvents"></div>
     </article>
@@ -418,7 +475,7 @@ var themeSelect = new RGUI.Select2({
     localStorage['selectedTheme'] = $event.selected.name;
 });
 
-// 生成tab
+// 生成tabs
 (function() {
     var $examples = document.getElementsByClassName('m-example');
 
@@ -455,11 +512,11 @@ var themeSelect = new RGUI.Select2({
 
         new RGUI.Component({
             template: RGUI._.multiline(function(){/*
-<tab>
+<tabs>
     {#list source as item}
-    <tabPane title={item.title}><div r-html={item.content}></div></tabPane>
+    <tab title={item.title}><div r-html={item.content}></div></tab>
     {/list}
-</tab>
+</tabs>
             */}),
             data: {
                 source: source
@@ -473,6 +530,7 @@ var index = 0;
 (function(index) {
     var template = RGUI._.multiline(function(){/*
 <datePicker />
+<datePicker date="2008-08-08" />
     */})
 var component = new RGUI.Component({
     template: template,
@@ -491,13 +549,37 @@ var component = new RGUI.Component({
 (function(index) {
     var template = RGUI._.multiline(function(){/*
 <datePicker minDate={minDate} maxDate={maxDate} />
+<datePicker minDate="2008-08-08" maxDate="2008-08-16" />
     */})
 var component = new RGUI.Component({
     template: template,
     data: {
-        minDate: new Date(new Date().getTime() + 2*24*3600*1000),
-        maxDate: new Date(new Date().getTime() + 7*24*3600*1000)
+        minDate: new Date(+new Date + 2*24*3600*1000),
+        maxDate: new Date(+new Date + 7*24*3600*1000)
     }
+});
+    component.$inject($$(".m-example")[index]);
+})(index++);
+(function(index) {
+    var template = RGUI._.multiline(function(){/*
+<datePicker date={date} />
+<datePicker date={date} />
+<p>当前选择的日期为：{date | format: 'yyyy-MM-dd'}</p>
+    */})
+var component = new RGUI.Component({
+    template: template,
+});
+    component.$inject($$(".m-example")[index]);
+})(index++);
+(function(index) {
+    var template = RGUI._.multiline(function(){/*
+<datePicker
+    on-toggle={console.log('on-toggle:', '$event.open:', $event.open)}
+    on-select={console.log('on-select:', '$event.date:', $event.date)}
+    on-change={console.log('on-change:', '$event.date:', $event.date)} />
+    */})
+var component = new RGUI.Component({
+    template: template,
 });
     component.$inject($$(".m-example")[index]);
 })(index++);

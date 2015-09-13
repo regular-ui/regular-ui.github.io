@@ -15,9 +15,10 @@
 // 该段代码是选择主题用的，与渲染有关，所以必须放前面。
 var relativePath = '../';
 var themes = [
-    {id: 1, name: 'default'},
-    {id: 2, name: 'flat'},
-    {id: 3, name: 'bootstrap'}
+    {name: 'simple'},
+    {name: 'default'},
+    {name: 'flat'},
+    {name: 'bootstrap'}
 ];
 
 var selectedTheme;
@@ -28,7 +29,7 @@ if(localStorage['selectedTheme']) {
             break;
         }
 } else {
-    selectedTheme = themes[0];
+    selectedTheme = themes[1];
 }
 
 var themeCSS = document.getElementById('j-themeCSS');
@@ -121,7 +122,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <ul>
 <li><p>为了防止组件内部类名的污染，并且为了好识别，使用<code>_</code>来做连字符。</p>
 <p>后代选择器的类名定义为组件名+<code>_</code>+后代选择器的含义。</p>
-<p>如用：<code>.m-tab .tab_hd</code>、<code>.m-calendar .calendar_hd</code>，而不用：<code>.m-tab .hd</code>、<code>.m-calendar .hd</code></p>
+<p>如用：<code>.m-tabs .tabs_hd</code>、<code>.m-calendar .calendar_hd</code>，而不用：<code>.m-tabs .hd</code>、<code>.m-calendar .hd</code></p>
 </li>
 <li><p>为了防止组件内部语义化标签的污染，使用<code>&gt;</code>来进行限制选择</p>
 <p>如用：<code>.m-list&gt;li</code>，而不用：<code>.m-list li</code></p>
@@ -244,32 +245,32 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <h3 id="-">已使用的缩写</h3>
 <h5 id="-">组件名</h5>
 <ul>
-<li>button: btn</li>
-<li>image: img</li>
-<li>formControl: formCtrl</li>
-<li>breadCrumb: crumb</li>
-<li>markdownEditor: markEditor</li>
+<li><code>button</code> =&gt; <code>btn</code></li>
+<li><code>image</code> =&gt; <code>img</code></li>
+<li><code>formControl</code> =&gt; <code>formCtrl</code></li>
+<li><code>breadCrumb</code> =&gt; <code>crumb</code></li>
+<li><code>markdownEditor</code> =&gt; <code>markEditor</code></li>
 </ul>
 <h5 id="-">类名</h5>
 <ul>
-<li>head: hd</li>
-<li>body: bd</li>
-<li>foot: ft</li>
+<li><code>head</code> =&gt; <code>hd</code></li>
+<li><code>body</code> =&gt; <code>bd</code></li>
+<li><code>foot</code> =&gt; <code>ft</code></li>
 </ul>
 <h5 id="-">状态名</h5>
 <ul>
-<li>active: act</li>
-<li>disabled: dis</li>
-<li>current: crt</li>
-<li>selected: sel</li>
+<li><code>active</code> =&gt; <code>act</code></li>
+<li><code>disabled</code> =&gt; <code>dis</code></li>
+<li><code>current</code> =&gt; <code>crt</code></li>
+<li><code>selected</code> =&gt; <code>sel</code></li>
 </ul>
 <h5 id="-">扩展样式名</h5>
 <ul>
-<li>extra small: xs</li>
-<li>small: sm</li>
-<li>medium: md</li>
-<li>large: lg</li>
-<li>extra large: xl</li>
+<li><code>extra small</code> =&gt; <code>xs</code></li>
+<li><code>small</code> =&gt; <code>sm</code></li>
+<li><code>medium</code> =&gt; <code>md</code></li>
+<li><code>large</code> =&gt; <code>lg</code></li>
+<li><code>extra large</code> =&gt; <code>xl</code></li>
 </ul>
 
         
@@ -299,7 +300,7 @@ var themeSelect = new RGUI.Select2({
     localStorage['selectedTheme'] = $event.selected.name;
 });
 
-// 生成tab
+// 生成tabs
 (function() {
     var $examples = document.getElementsByClassName('m-example');
 
@@ -336,11 +337,11 @@ var themeSelect = new RGUI.Select2({
 
         new RGUI.Component({
             template: RGUI._.multiline(function(){/*
-<tab>
+<tabs>
     {#list source as item}
-    <tabPane title={item.title}><div r-html={item.content}></div></tabPane>
+    <tab title={item.title}><div r-html={item.content}></div></tab>
     {/list}
-</tab>
+</tabs>
             */}),
             data: {
                 source: source

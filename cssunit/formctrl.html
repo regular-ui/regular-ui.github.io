@@ -15,9 +15,10 @@
 // 该段代码是选择主题用的，与渲染有关，所以必须放前面。
 var relativePath = '../';
 var themes = [
-    {id: 1, name: 'default'},
-    {id: 2, name: 'flat'},
-    {id: 3, name: 'bootstrap'}
+    {name: 'simple'},
+    {name: 'default'},
+    {name: 'flat'},
+    {name: 'bootstrap'}
 ];
 
 var selectedTheme;
@@ -28,7 +29,7 @@ if(localStorage['selectedTheme']) {
             break;
         }
 } else {
-    selectedTheme = themes[0];
+    selectedTheme = themes[1];
 }
 
 var themeCSS = document.getElementById('j-themeCSS');
@@ -284,7 +285,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <p>Regular UI中将表单名称、表单控件和表单提示封装为一个表单项<code>.u-formitem</code>。</p>
 <p>表单项在表单中很常见，请参见<a href="../cssmodule/form.html">Form</a>。</p>
 <div class="m-example"><div class="u-formitem">
-    <label class="formitem_tt">用户名<span class="formitem_rqr">*</span>：</label>
+    <label class="formitem_tt">用户名<span class="formitem_rqr">&#42;</span>：</label>
     <span class="formitem_ct">
         <input class="u-input" placeholder="请输入">
         <span class="u-tip">4~12个字符，包括字母、数字、下划线</span>
@@ -292,7 +293,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 </div></div>
 
 <pre class="lang-html"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-formitem&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
-    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">label</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;formitem_tt&quot;</span><span class="cm-tagcm-bracket">&gt;</span>用户名<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;formitem_rqr&quot;</span><span class="cm-tagcm-bracket">&gt;</span>*<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tagcm-bracket">&gt;</span>：<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">label</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">label</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;formitem_tt&quot;</span><span class="cm-tagcm-bracket">&gt;</span>用户名<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;formitem_rqr&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-atom">&amp;#42;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tagcm-bracket">&gt;</span>：<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">label</span><span class="cm-tagcm-bracket">&gt;</span>
     <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;formitem_ct&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
         <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">input</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-input&quot;</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">&quot;请输入&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
         <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-tip&quot;</span><span class="cm-tagcm-bracket">&gt;</span>4~12个字符，包括字母、数字、下划线<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tagcm-bracket">&gt;</span>
@@ -363,7 +364,7 @@ var themeSelect = new RGUI.Select2({
     localStorage['selectedTheme'] = $event.selected.name;
 });
 
-// 生成tab
+// 生成tabs
 (function() {
     var $examples = document.getElementsByClassName('m-example');
 
@@ -400,11 +401,11 @@ var themeSelect = new RGUI.Select2({
 
         new RGUI.Component({
             template: RGUI._.multiline(function(){/*
-<tab>
+<tabs>
     {#list source as item}
-    <tabPane title={item.title}><div r-html={item.content}></div></tabPane>
+    <tab title={item.title}><div r-html={item.content}></div></tab>
     {/list}
-</tab>
+</tabs>
             */}),
             data: {
                 source: source

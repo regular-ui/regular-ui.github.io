@@ -15,9 +15,10 @@
 // 该段代码是选择主题用的，与渲染有关，所以必须放前面。
 var relativePath = '../';
 var themes = [
-    {id: 1, name: 'default'},
-    {id: 2, name: 'flat'},
-    {id: 3, name: 'bootstrap'}
+    {name: 'simple'},
+    {name: 'default'},
+    {name: 'flat'},
+    {name: 'bootstrap'}
 ];
 
 var selectedTheme;
@@ -28,7 +29,7 @@ if(localStorage['selectedTheme']) {
             break;
         }
 } else {
-    selectedTheme = themes[0];
+    selectedTheme = themes[1];
 }
 
 var themeCSS = document.getElementById('j-themeCSS');
@@ -129,7 +130,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <div class="u-message u-message-warning">
     <i class="message_icon u-icon u-icon-warning-circle"></i> 注意：单独引入组件，在打包时需要<code>require</code>有<code>text!</code>插件来引入模板。<br>
     <ul>
-        <li>使用webpack打包时，先安装<code>text-loader</code>：<code>npm install text-loader</code>。</li>
+        <li>使用webpack打包时，先安装<code>npm install text-loader</code>。</li>
     </ul>
 </div>
 
@@ -217,7 +218,7 @@ var themeSelect = new RGUI.Select2({
     localStorage['selectedTheme'] = $event.selected.name;
 });
 
-// 生成tab
+// 生成tabs
 (function() {
     var $examples = document.getElementsByClassName('m-example');
 
@@ -254,11 +255,11 @@ var themeSelect = new RGUI.Select2({
 
         new RGUI.Component({
             template: RGUI._.multiline(function(){/*
-<tab>
+<tabs>
     {#list source as item}
-    <tabPane title={item.title}><div r-html={item.content}></div></tabPane>
+    <tab title={item.title}><div r-html={item.content}></div></tab>
     {/list}
-</tab>
+</tabs>
             */}),
             data: {
                 source: source
