@@ -8,8 +8,8 @@
 <meta name="keywords" content="Regular,UI,JavaScript,Framework,MVC,MVVM">
 <meta name="description" content="Regular UI">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<link rel="icon" href="/global/img/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="/global/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" id="j-themeCSS">
 <script>
 // 该段代码是选择主题用的，与渲染有关，所以必须放前面。
@@ -38,9 +38,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <body>
 <div class="g-top">
     <div class="g-topc">
-        <h1 class="m-logo">
-            <a href="/">Regular UI</a>
-        </h1>
+        <a class="m-logo" href="../index.html"><img src="../img/logo-v1.0-long-48.png" /></a>
         <ul class="m-navbar f-fr">
             
             
@@ -61,9 +59,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
             <li id="j-themeSelect"></li>
         </ul>
     </div>
-</div>
-<div class="g-bd">
-    <div class="g-bdc"><div class="g-sd">
+</div><div class="g-bd"><div class="g-bdc"><div class="g-sd">
     <ul class="m-sidebar">
         
         
@@ -457,7 +453,50 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     }
 });
 </code></pre>
+<!-- #### Test
 
+<!- div class="m-example"></div>
+
+```! xml
+<select2Group source={source} />
+```
+
+```! javascript
+var component = new RGUI.Component({
+    template: template,
+    data: {
+        source: [
+            {name: '理学', children: [
+                {name: '物理学', children: [
+                    {name: '理论物理'},
+                    {name: '凝聚态物理'},
+                    {name: '材料物理'}
+                ]},
+                {name: '数学', children: [
+                    {name: '基础数学'},
+                    {name: '计算数学'},
+                    {name: '应用数学'}
+                ]},
+                {name: '化学'}
+            ]},
+            {name: '工学', children: [
+                {name: '计算机科学与技术', children: [
+                    {name: '计算机系统结构'},
+                    {name: '计算机软件与理论'},
+                    {name: '计算机应用技术'}
+                ]},
+                {name: '软件工程'},
+                {name: '机械工程', children: [
+                    {name: '机械制造及其自动化'},
+                    {name: '机械电子工程'},
+                    {name: '机械设计及理论'},
+                    {name: '车辆工程'}
+                ]}
+            ]}
+        ]
+    }
+});
+``` -->
         <h3>API</h3>
 
 <h4>Class</h4>
@@ -470,7 +509,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <h5>new Select2Group()</h5>
 <table>
     <thead>
-        <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+        <tr><th width="25%">参数</th><th width="25%">类型</th><th width="25%">默认值</th><th width="25%">描述</th></tr>
     </thead>
     <tbody>
         
@@ -519,7 +558,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     <p>最后的选择项改变时触发</p>
     <table>
         <thead>
-            <tr><th>属性</th><th>类型</th><th>描述</th></tr>
+            <tr><th width="33%">属性</th><th width="33%">类型</th><th width="33%">描述</th></tr>
         </thead>
         <tbody>
             
@@ -537,7 +576,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     <p>选择某一项时触发</p>
     <table>
         <thead>
-            <tr><th>属性</th><th>类型</th><th>描述</th></tr>
+            <tr><th width="33%">属性</th><th width="33%">类型</th><th width="33%">描述</th></tr>
         </thead>
         <tbody>
             
@@ -556,10 +595,18 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 
 <div id="j-inheritedEvents"></div>
     </article>
-</div>    </div>
+</div></div></div><div class="g-ft">
+    <footer class="m-footer">
+        <p><a href="../index.html" class="footer_logo"><img src="../img/logo-v1.0-64.png" /></p>
+        <p>
+            <a href="https://github.com/regular-ui/regular-ui" target="_blank">GitHub</a> |
+            <a href="https://github.com/regular-ui/regular-ui/issues" target="_blank">Issues</a> |
+            <a href="https://github.com/regular-ui/regular-ui/releases" target="_blank">ChangeLog</a> |
+            <a href="https://github.com/regular-ui/regular-ui/blob/master/CONTRIBUTING.md" target="_blank">Contributing</a>
+        </p>
+        <p>Licensed under <a href="https://github.com/regular-ui/regular-ui/blob/master/LICENSE" target="_blank">MIT license</a>.</p>
+    </footer>
 </div>
-<footer class="g-ft">
-</footer>
 <a href="#" class="m-gotop"></a>
 <script src="../vendor/regular.min.js"></script>
 <script src="../vendor/marked.min.js"></script>
@@ -573,7 +620,7 @@ var themeSelect = new RGUI.Select2({
         source: themes,
         selected: selectedTheme,
         placeholder: null,
-        'class': 'u-select2-nav'
+        'class': 'u-select2-theme'
     }
 }).$inject('#j-themeSelect')
   .$on('select', function($event) {

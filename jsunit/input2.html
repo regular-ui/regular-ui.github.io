@@ -8,8 +8,8 @@
 <meta name="keywords" content="Regular,UI,JavaScript,Framework,MVC,MVVM">
 <meta name="description" content="Regular UI">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<link rel="icon" href="/global/img/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="/global/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" id="j-themeCSS">
 <script>
 // 该段代码是选择主题用的，与渲染有关，所以必须放前面。
@@ -38,9 +38,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <body>
 <div class="g-top">
     <div class="g-topc">
-        <h1 class="m-logo">
-            <a href="/">Regular UI</a>
-        </h1>
+        <a class="m-logo" href="../index.html"><img src="../img/logo-v1.0-long-48.png" /></a>
         <ul class="m-navbar f-fr">
             
             
@@ -61,9 +59,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
             <li id="j-themeSelect"></li>
         </ul>
     </div>
-</div>
-<div class="g-bd">
-    <div class="g-bdc"><div class="g-sd">
+</div><div class="g-bd"><div class="g-bdc"><div class="g-sd">
     <ul class="m-sidebar">
         
         
@@ -232,16 +228,27 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <h3 id="-">示例</h3>
 <h4 id="-">基本形式</h4>
+<p>大部分属性的用法与<code>&lt;input&gt;</code>一致。</p>
 <div class="m-example"></div>
 
-<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">input2</span> <span class="cm-attribute">rules</span>=<span class="cm-attribute">{rules}</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span>
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">label</span><span class="cm-tagcm-bracket">&gt;</span>密码：<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">input2</span> <span class="cm-attribute">type</span>=<span class="cm-string">&quot;password&quot;</span> <span class="cm-attribute">maxlength</span>=<span class="cm-attribute">6</span> <span class="cm-attribute">placeholder</span>=<span class="cm-string">&quot;请输入密码&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">label</span><span class="cm-tagcm-bracket">&gt;</span>
+</code></pre>
+<h4 id="-">单位</h4>
+<div class="m-example"></div>
+
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">label</span><span class="cm-tagcm-bracket">&gt;</span>速度：<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">input2</span> <span class="cm-attribute">width</span>=<span class="cm-string">&quot;smw&quot;</span> <span class="cm-attribute">value</span>=<span class="cm-string">&quot;340&quot;</span> <span class="cm-attribute">unit</span>=<span class="cm-string">&quot;m/s&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">label</span><span class="cm-tagcm-bracket">&gt;</span>
+</code></pre>
+<h4 id="-">验证</h4>
+<div class="m-example"></div>
+
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">label</span><span class="cm-tagcm-bracket">&gt;</span>邮箱：<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">input2</span> <span class="cm-attribute">rules</span>=<span class="cm-attribute">{rules}</span> <span class="cm-attribute">maxlength</span>=<span class="cm-attribute">20</span> <span class="cm-attribute">validating</span>=<span class="cm-attribute">{true}</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">label</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
 <pre class="lang-javascript"><code><span class="cm-keyword">var</span> <span class="cm-variable">component</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">RGUI</span>.<span class="cm-property">Component</span>({
     <span class="cm-property">template</span>: <span class="cm-variable">template</span>,
     <span class="cm-property">data</span>: {
         <span class="cm-property">rules</span>: [
-            {<span class="cm-property">type</span>: <span class="cm-string">&#39;isRequired&#39;</span>, <span class="cm-property">message</span>: <span class="cm-string">&#39;请输入字符！&#39;</span>},
-            {<span class="cm-property">type</span>: <span class="cm-string">&#39;isLength&#39;</span>, <span class="cm-property">min</span>: <span class="cm-number">5</span>, <span class="cm-property">max</span>: <span class="cm-number">8</span>, <span class="cm-property">message</span>: <span class="cm-string">&#39;请输入5-8个字符！&#39;</span>}
+            {<span class="cm-property">type</span>: <span class="cm-string">&#39;isFilled&#39;</span>, <span class="cm-property">message</span>: <span class="cm-string">&#39;请输入邮箱！&#39;</span>},
+            {<span class="cm-property">type</span>: <span class="cm-string">&#39;isEmail&#39;</span>, <span class="cm-property">message</span>: <span class="cm-string">&#39;请输入正确的邮箱！&#39;</span>}
         ]
     }
 });
@@ -259,7 +266,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <h5>new Input2()</h5>
 <table>
     <thead>
-        <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+        <tr><th width="25%">参数</th><th width="25%">类型</th><th width="25%">默认值</th><th width="25%">描述</th></tr>
     </thead>
     <tbody>
         
@@ -268,11 +275,13 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
             
             <tr><td class="f-wsn"><code>data.value</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td>输入框的值</td></tr>
             
-            <tr><td class="f-wsn"><code>data.type</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td>输入框的类型</td></tr>
+            <tr><td class="f-wsn"><code>data.state</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td>输入框的状态</td></tr>
             
             <tr><td class="f-wsn"><code>data.placeholder</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td>占位符</td></tr>
             
             <tr><td class="f-wsn"><code>data.rules</code></td><td class="f-wsn">object[]</td><td class="f-wsn"><code>[]</code></td><td>验证规则</td></tr>
+            
+            <tr><td class="f-wsn"><code>data.validating</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>false</code></td><td>是否实时验证</td></tr>
             
             <tr><td class="f-wsn"><code>data.readonly</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>false</code></td><td>是否只读</td></tr>
             
@@ -288,6 +297,23 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <div id="j-options"></div>
 
 
+    <h4>Methods</h4>
+    
+    
+    <h5>input2.validate()</h5>
+    <p>根据`rules`验证组件的值是否正确</p>
+    <table>
+        <thead>
+            <tr><th width="25%">参数</th><th width="25%">类型</th><th width="25%">默认值</th><th width="25%">描述</th></tr>
+        </thead>
+        <tbody>
+            
+                <tr><td class="f-tac" colspan="4">无参数</td></tr>
+            
+        </tbody>
+    </table>
+    
+
 <div id="j-methods"></div>
 
 
@@ -302,10 +328,18 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 
 <div id="j-inheritedEvents"></div>
     </article>
-</div>    </div>
+</div></div></div><div class="g-ft">
+    <footer class="m-footer">
+        <p><a href="../index.html" class="footer_logo"><img src="../img/logo-v1.0-64.png" /></p>
+        <p>
+            <a href="https://github.com/regular-ui/regular-ui" target="_blank">GitHub</a> |
+            <a href="https://github.com/regular-ui/regular-ui/issues" target="_blank">Issues</a> |
+            <a href="https://github.com/regular-ui/regular-ui/releases" target="_blank">ChangeLog</a> |
+            <a href="https://github.com/regular-ui/regular-ui/blob/master/CONTRIBUTING.md" target="_blank">Contributing</a>
+        </p>
+        <p>Licensed under <a href="https://github.com/regular-ui/regular-ui/blob/master/LICENSE" target="_blank">MIT license</a>.</p>
+    </footer>
 </div>
-<footer class="g-ft">
-</footer>
 <a href="#" class="m-gotop"></a>
 <script src="../vendor/regular.min.js"></script>
 <script src="../vendor/marked.min.js"></script>
@@ -319,7 +353,7 @@ var themeSelect = new RGUI.Select2({
         source: themes,
         selected: selectedTheme,
         placeholder: null,
-        'class': 'u-select2-nav'
+        'class': 'u-select2-theme'
     }
 }).$inject('#j-themeSelect')
   .$on('select', function($event) {
@@ -381,14 +415,32 @@ var themeSelect = new RGUI.Select2({
 var index = 0;
 (function(index) {
     var template = RGUI._.multiline(function(){/*
-<input2 rules={rules} />
+<label>密码：<input2 type="password" maxlength=6 placeholder="请输入密码" /></label>
+    */})
+var component = new RGUI.Component({
+    template: template,
+});
+    component.$inject($$(".m-example")[index]);
+})(index++);
+(function(index) {
+    var template = RGUI._.multiline(function(){/*
+<label>速度：<input2 width="smw" value="340" unit="m/s" /></label>
+    */})
+var component = new RGUI.Component({
+    template: template,
+});
+    component.$inject($$(".m-example")[index]);
+})(index++);
+(function(index) {
+    var template = RGUI._.multiline(function(){/*
+<label>邮箱：<input2 rules={rules} maxlength=20 validating={true} /></label>
     */})
 var component = new RGUI.Component({
     template: template,
     data: {
         rules: [
-            {type: 'isRequired', message: '请输入字符！'},
-            {type: 'isLength', min: 5, max: 8, message: '请输入5-8个字符！'}
+            {type: 'isFilled', message: '请输入邮箱！'},
+            {type: 'isEmail', message: '请输入正确的邮箱！'}
         ]
     }
 });

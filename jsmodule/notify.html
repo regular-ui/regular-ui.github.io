@@ -8,8 +8,8 @@
 <meta name="keywords" content="Regular,UI,JavaScript,Framework,MVC,MVVM">
 <meta name="description" content="Regular UI">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<link rel="icon" href="/global/img/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="/global/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" id="j-themeCSS">
 <script>
 // 该段代码是选择主题用的，与渲染有关，所以必须放前面。
@@ -38,9 +38,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <body>
 <div class="g-top">
     <div class="g-topc">
-        <h1 class="m-logo">
-            <a href="/">Regular UI</a>
-        </h1>
+        <a class="m-logo" href="../index.html"><img src="../img/logo-v1.0-long-48.png" /></a>
         <ul class="m-navbar f-fr">
             
             
@@ -61,9 +59,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
             <li id="j-themeSelect"></li>
         </ul>
     </div>
-</div>
-<div class="g-bd">
-    <div class="g-bdc"><div class="g-sd">
+</div><div class="g-bd"><div class="g-bdc"><div class="g-sd">
     <ul class="m-sidebar">
         
         
@@ -170,6 +166,16 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         
         
+        
+        
+        <li class="sidebar_group"><span>其他</span></li>
+        
+        <li><a href="../jsmodule/validation.html">表单验证<small> Validation</small>
+        
+            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
+        
+        </a></li>
+        
     </ul>
 </div><div class="g-mn">
     <article class="m-article">
@@ -200,8 +206,8 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 </code></pre>
 <pre class="lang-javascript"><code><span class="cm-keyword">var</span> <span class="cm-variable">component</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">RGUI</span>.<span class="cm-property">Component</span>({
     <span class="cm-property">template</span>: <span class="cm-variable">template</span>,
-    <span class="cm-property">showMessage</span>: <span class="cm-keyword">function</span>(<span class="cm-def">type</span>) {
-        <span class="cm-variable">RGUI</span>.<span class="cm-property">Notify</span>.<span class="cm-property">show</span>(<span class="cm-variable-2">type</span> <span class="cm-operator">+</span> <span class="cm-string">&#39; message.&#39;</span>, <span class="cm-variable-2">type</span>);
+    <span class="cm-property">showMessage</span>: <span class="cm-keyword">function</span>(<span class="cm-def">state</span>) {
+        <span class="cm-variable">RGUI</span>.<span class="cm-property">Notify</span>.<span class="cm-property">show</span>(<span class="cm-variable-2">state</span> <span class="cm-operator">+</span> <span class="cm-string">&#39; message.&#39;</span>, <span class="cm-variable-2">state</span>);
     }
 });
 </code></pre>
@@ -276,7 +282,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <h5>new Notify()</h5>
 <table>
     <thead>
-        <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+        <tr><th width="25%">参数</th><th width="25%">类型</th><th width="25%">默认值</th><th width="25%">描述</th></tr>
     </thead>
     <tbody>
         
@@ -300,18 +306,18 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     <h4>Methods</h4>
     
     
-    <h5>notify.show(text[, type][, duration])</h5>
+    <h5>notify.show(text[, state][, duration])</h5>
     <p>弹出一个消息</p>
     <table>
         <thead>
-            <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+            <tr><th width="25%">参数</th><th width="25%">类型</th><th width="25%">默认值</th><th width="25%">描述</th></tr>
         </thead>
         <tbody>
             
                 
                 <tr><td class="f-wsn"><code>text</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td>消息内容</td></tr>
                 
-                <tr><td class="f-wsn"><code>type</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>null</code></td><td>消息类型，可选参数：`info`、`success`、`warning`、`error`</td></tr>
+                <tr><td class="f-wsn"><code>state</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>null</code></td><td>消息状态，可选参数：`info`、`success`、`warning`、`error`</td></tr>
                 
                 <tr><td class="f-wsn"><code>duration</code></td><td class="f-wsn">number</td><td class="f-wsn"><code>notify.duration</code></td><td>该条消息的停留毫秒数，如果为0，则表示消息常驻不消失。</td></tr>
                 
@@ -324,7 +330,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     <p>关闭某条消息</p>
     <table>
         <thead>
-            <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+            <tr><th width="25%">参数</th><th width="25%">类型</th><th width="25%">默认值</th><th width="25%">描述</th></tr>
         </thead>
         <tbody>
             
@@ -340,7 +346,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     <p>关闭所有消息</p>
     <table>
         <thead>
-            <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+            <tr><th width="25%">参数</th><th width="25%">类型</th><th width="25%">默认值</th><th width="25%">描述</th></tr>
         </thead>
         <tbody>
             
@@ -356,18 +362,18 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     <h4>Static Methods</h4>
     
     
-    <h5>Notify.show(text[, type][, duration])</h5>
+    <h5>Notify.show(text[, state][, duration])</h5>
     <p>弹出一个消息</p>
     <table>
         <thead>
-            <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+            <tr><th width="25%">参数</th><th width="25%">类型</th><th width="25%">默认值</th><th width="25%">描述</th></tr>
         </thead>
         <tbody>
             
                 
                 <tr><td class="f-wsn"><code>text</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td>消息内容</td></tr>
                 
-                <tr><td class="f-wsn"><code>type</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>null</code></td><td>消息类型，可选参数：`info`、`success`、`warning`、`error`</td></tr>
+                <tr><td class="f-wsn"><code>state</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>null</code></td><td>消息状态，可选参数：`info`、`success`、`warning`、`error`</td></tr>
                 
                 <tr><td class="f-wsn"><code>duration</code></td><td class="f-wsn">number</td><td class="f-wsn"><code>notify.duration</code></td><td>该条消息的停留毫秒数，如果为0，则表示消息常驻不消失。</td></tr>
                 
@@ -380,7 +386,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     <p>弹出特殊类型的消息</p>
     <table>
         <thead>
-            <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+            <tr><th width="25%">参数</th><th width="25%">类型</th><th width="25%">默认值</th><th width="25%">描述</th></tr>
         </thead>
         <tbody>
             
@@ -396,7 +402,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     <p>关闭某条消息</p>
     <table>
         <thead>
-            <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+            <tr><th width="25%">参数</th><th width="25%">类型</th><th width="25%">默认值</th><th width="25%">描述</th></tr>
         </thead>
         <tbody>
             
@@ -412,7 +418,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     <p>关闭所有消息</p>
     <table>
         <thead>
-            <tr><th>参数</th><th>类型</th><th>默认值</th><th>描述</th></tr>
+            <tr><th width="25%">参数</th><th width="25%">类型</th><th width="25%">默认值</th><th width="25%">描述</th></tr>
         </thead>
         <tbody>
             
@@ -435,7 +441,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     <p>弹出一个消息时触发</p>
     <table>
         <thead>
-            <tr><th>属性</th><th>类型</th><th>描述</th></tr>
+            <tr><th width="33%">属性</th><th width="33%">类型</th><th width="33%">描述</th></tr>
         </thead>
         <tbody>
             
@@ -451,7 +457,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     <p>关闭某条消息时触发</p>
     <table>
         <thead>
-            <tr><th>属性</th><th>类型</th><th>描述</th></tr>
+            <tr><th width="33%">属性</th><th width="33%">类型</th><th width="33%">描述</th></tr>
         </thead>
         <tbody>
             
@@ -468,10 +474,18 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 
 <div id="j-inheritedEvents"></div>
     </article>
-</div>    </div>
+</div></div></div><div class="g-ft">
+    <footer class="m-footer">
+        <p><a href="../index.html" class="footer_logo"><img src="../img/logo-v1.0-64.png" /></p>
+        <p>
+            <a href="https://github.com/regular-ui/regular-ui" target="_blank">GitHub</a> |
+            <a href="https://github.com/regular-ui/regular-ui/issues" target="_blank">Issues</a> |
+            <a href="https://github.com/regular-ui/regular-ui/releases" target="_blank">ChangeLog</a> |
+            <a href="https://github.com/regular-ui/regular-ui/blob/master/CONTRIBUTING.md" target="_blank">Contributing</a>
+        </p>
+        <p>Licensed under <a href="https://github.com/regular-ui/regular-ui/blob/master/LICENSE" target="_blank">MIT license</a>.</p>
+    </footer>
 </div>
-<footer class="g-ft">
-</footer>
 <a href="#" class="m-gotop"></a>
 <script src="../vendor/regular.min.js"></script>
 <script src="../vendor/marked.min.js"></script>
@@ -485,7 +499,7 @@ var themeSelect = new RGUI.Select2({
         source: themes,
         selected: selectedTheme,
         placeholder: null,
-        'class': 'u-select2-nav'
+        'class': 'u-select2-theme'
     }
 }).$inject('#j-themeSelect')
   .$on('select', function($event) {
@@ -566,8 +580,8 @@ var component = new RGUI.Component({
     */})
 var component = new RGUI.Component({
     template: template,
-    showMessage: function(type) {
-        RGUI.Notify.show(type + ' message.', type);
+    showMessage: function(state) {
+        RGUI.Notify.show(state + ' message.', state);
     }
 });
     component.$inject($$(".m-example")[index]);
