@@ -35,6 +35,7 @@ if(localStorage['selectedTheme']) {
 var themeCSS = document.getElementById('j-themeCSS');
 themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.css';
 </script>
+</head>
 <body>
 <div class="g-top">
     <div class="g-topc">
@@ -67,15 +68,11 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../cssunit/base.html">基础<small> Base</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         <li><a href="../cssunit/button.html">按钮<small> Button</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -83,15 +80,11 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../cssunit/icon.html">图标<small> Icon</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         <li class="z-crt"><a href="../cssunit/color.html">色块<small> Color</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -99,15 +92,11 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../cssunit/text.html">文本<small> Text</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         <li><a href="../cssunit/badge.html">徽章<small> Badge</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -115,15 +104,11 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../cssunit/message.html">消息条<small> Message</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         <li><a href="../cssunit/image.html">图片<small> Image</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -131,8 +116,6 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         
         <li><a href="../cssunit/formctrl.html">表单元素<small> FormControl</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -150,25 +133,19 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <div class="u-color u-color-info">Info</div>
 <div class="u-color u-color-success">Success</div>
 <div class="u-color u-color-warning">Warning</div>
-<div class="u-color u-color-error">Error</div>
-<div class="u-color">Default</div>
-<div class="u-color u-color-secondary">Secondary</div>
-<div class="u-color u-color-gray">Gray</div>
-<div class="u-color u-color-graylight">GrayLight</div>
-<div class="u-color u-color-inverse">Inverse</div></div>
+<div class="u-color u-color-error">Error</div></div>
 
 <pre class="lang-html"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-color u-color-primary&quot;</span><span class="cm-tagcm-bracket">&gt;</span>Primary<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
 <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-color u-color-info&quot;</span><span class="cm-tagcm-bracket">&gt;</span>Info<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
 <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-color u-color-success&quot;</span><span class="cm-tagcm-bracket">&gt;</span>Success<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
 <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-color u-color-warning&quot;</span><span class="cm-tagcm-bracket">&gt;</span>Warning<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
 <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-color u-color-error&quot;</span><span class="cm-tagcm-bracket">&gt;</span>Error<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-color&quot;</span><span class="cm-tagcm-bracket">&gt;</span>Default<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-color u-color-secondary&quot;</span><span class="cm-tagcm-bracket">&gt;</span>Secondary<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-color u-color-gray&quot;</span><span class="cm-tagcm-bracket">&gt;</span>Gray<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-color u-color-graylight&quot;</span><span class="cm-tagcm-bracket">&gt;</span>GrayLight<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-color u-color-inverse&quot;</span><span class="cm-tagcm-bracket">&gt;</span>Inverse<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
-
+<!-- div class="u-color">Default</div>
+<div class="u-color u-color-secondary">Secondary</div>
+<div class="u-color u-color-gray">Gray</div>
+<div class="u-color u-color-graylight">GrayLight</div>
+<div class="u-color u-color-inverse">Inverse</div -->
         
     </article>
 </div></div></div><div class="g-ft">
@@ -185,7 +162,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 </div>
 <a href="#" class="m-gotop"></a>
 <script src="../vendor/regular.min.js"></script>
-<script src="../vendor/marked.min.js"></script>
+<!-- script src="../vendor/marked.min.js"></script -->
 <script src="../js/regular-ui.min.js"></script>
 <script>
 var _ = RGUI._;
@@ -206,7 +183,7 @@ var themeSelect = new RGUI.Select2({
 
 // 生成tabs
 (function() {
-    var $examples = document.getElementsByClassName('m-example');
+    var $examples = $$('.m-example');
 
     for(var i = 0; i < $examples.length; i++) {
         var $example = $examples[i];

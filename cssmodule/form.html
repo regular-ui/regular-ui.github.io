@@ -35,6 +35,7 @@ if(localStorage['selectedTheme']) {
 var themeCSS = document.getElementById('j-themeCSS');
 themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.css';
 </script>
+</head>
 <body>
 <div class="g-top">
     <div class="g-topc">
@@ -69,15 +70,11 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../cssmodule/navbar.html">导航栏<small> Navbar</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         <li><a href="../cssmodule/sidebar.html">侧边栏<small> Sidebar</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -85,15 +82,11 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../cssmodule/toolbar.html">工具栏<small> Toolbar</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         <li><a href="../cssmodule/crumb.html">面包屑<small> Crumb</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -103,15 +96,11 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../cssmodule/article.html">文章<small> Article</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         <li><a href="../cssmodule/comment.html">评论<small> Comment</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -122,15 +111,11 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../cssmodule/list.html">列表<small> List</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         <li><a href="../cssmodule/table.html">表格<small> Table</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -138,15 +123,11 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../cssmodule/panel.html">面板<small> Panel</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         <li class="z-crt"><a href="../cssmodule/form.html">表单<small> Form</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -164,7 +145,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         <label class="formitem_tt">用户名<span class="formitem_rqr">&#42;</span>：</label>
         <span class="formitem_ct">
             <input class="u-input">
-            <span class="formitem_tip">4~12个字符，包括字母、数字、下划线</span>
+            <span class="u-tip">4~12个字符，包括字母、数字、下划线</span>
         </span>
     </div>
     <div class="u-formitem">
@@ -196,7 +177,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">label</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;formitem_tt&quot;</span><span class="cm-tagcm-bracket">&gt;</span>用户名<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;formitem_rqr&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-atom">&amp;#42;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tagcm-bracket">&gt;</span>：<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">label</span><span class="cm-tagcm-bracket">&gt;</span>
         <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;formitem_ct&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
             <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">input</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-input&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
-            <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;formitem_tip&quot;</span><span class="cm-tagcm-bracket">&gt;</span>4~12个字符，包括字母、数字、下划线<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tagcm-bracket">&gt;</span>
+            <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">span</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-tip&quot;</span><span class="cm-tagcm-bracket">&gt;</span>4~12个字符，包括字母、数字、下划线<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tagcm-bracket">&gt;</span>
         <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tagcm-error">span</span><span class="cm-tagcm-bracketcm-error">&gt;</span>
     <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tagcm-error">div</span><span class="cm-tagcm-bracketcm-error">&gt;</span>
     <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;u-formitem&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
@@ -371,7 +352,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 </div>
 <a href="#" class="m-gotop"></a>
 <script src="../vendor/regular.min.js"></script>
-<script src="../vendor/marked.min.js"></script>
+<!-- script src="../vendor/marked.min.js"></script -->
 <script src="../js/regular-ui.min.js"></script>
 <script>
 var _ = RGUI._;
@@ -392,7 +373,7 @@ var themeSelect = new RGUI.Select2({
 
 // 生成tabs
 (function() {
-    var $examples = document.getElementsByClassName('m-example');
+    var $examples = $$('.m-example');
 
     for(var i = 0; i < $examples.length; i++) {
         var $example = $examples[i];

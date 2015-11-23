@@ -35,6 +35,7 @@ if(localStorage['selectedTheme']) {
 var themeCSS = document.getElementById('j-themeCSS');
 themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.css';
 </script>
+</head>
 <body>
 <div class="g-top">
     <div class="g-topc">
@@ -69,23 +70,17 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../jsmodule/tabs.html">选项卡<small> Tabs</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         <li><a href="../jsmodule/collapse.html">折叠面板<small> Collapse</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         <li><a href="../jsmodule/pager.html">分页器<small> Pager</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -96,15 +91,11 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../jsmodule/notify.html">通知<small> Notify</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         <li><a href="../jsmodule/modal.html">模态对话框<small> Modal</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -118,16 +109,12 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../jsmodule/listview.html">列表视图<small> ListView</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         
         <li><a href="../jsmodule/treeview.html">树型视图<small> TreeView</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -137,8 +124,6 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         <li class="sidebar_group"><span>日期类</span></li>
         
         <li class="z-crt"><a href="../jsmodule/calendar.html">日历<small> Calendar</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -151,15 +136,11 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../jsmodule/htmleditor.html">HTML编辑器<small> HTMLEditor</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
         
         
         
         <li><a href="../jsmodule/markeditor.html">Markdown编辑器<small> MarkEditor</small>
-        
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
         
         </a></li>
         
@@ -172,9 +153,9 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li><a href="../jsmodule/validation.html">表单验证<small> Validation</small>
         
-            <i class="u-icon u-icon-success-circle" title="功能和主题基本实现，文档比较完善"></i>
-        
         </a></li>
+        
+        
         
     </ul>
 </div><div class="g-mn">
@@ -192,7 +173,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <h4 id="-">禁用组件</h4>
 <div class="m-example"></div>
 
-<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">disabled</span>=<span class="cm-attribute">{true}</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span>
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">disabled</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span>
 </code></pre>
 <h4 id="-">日期范围</h4>
 <div class="m-example"></div>
@@ -251,26 +232,26 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <h5>new Calendar()</h5>
 <table>
     <thead>
-        <tr><th width="25%">参数</th><th width="25%">类型</th><th width="25%">默认值</th><th width="25%">描述</th></tr>
+        <tr><th width="24%">参数</th><th width="16%">类型</th><th width="16%">默认值</th><th width="18%">数据流向</th><th width="26%">描述</th></tr>
     </thead>
     <tbody>
         
             
-            <tr><td class="f-wsn"><code>data</code></td><td class="f-wsn">object</td><td class="f-wsn"></td><td>绑定属性</td></tr>
+            <tr><td class="f-wsn"><code>data</code></td><td class="f-wsn">object</td><td class="f-wsn"></td><td class="f-tac"></td><td>绑定属性</td></tr>
             
-            <tr><td class="f-wsn"><code>data.date</code></td><td class="f-wsn">Date | string</td><td class="f-wsn"><code>TODAY</code></td><td>当前选择的日期</td></tr>
+            <tr><td class="f-wsn"><code>data.date</code></td><td class="f-wsn">Date | string</td><td class="f-wsn"><code>TODAY</code></td><td class="f-tac">outer &lt;=&gt; inner</td><td>当前选择的日期</td></tr>
             
-            <tr><td class="f-wsn"><code>data.minDate</code></td><td class="f-wsn">Date | string</td><td class="f-wsn"><code>null</code></td><td>最小日期，如果为空则不限制</td></tr>
+            <tr><td class="f-wsn"><code>data.minDate</code></td><td class="f-wsn">Date | string</td><td class="f-wsn"><code>null</code></td><td class="f-tac">outer  =&gt; inner</td><td>最小日期，如果为空则不限制</td></tr>
             
-            <tr><td class="f-wsn"><code>data.maxDate</code></td><td class="f-wsn">Date | string</td><td class="f-wsn"><code>null</code></td><td>最大日期，如果为空则不限制</td></tr>
+            <tr><td class="f-wsn"><code>data.maxDate</code></td><td class="f-wsn">Date | string</td><td class="f-wsn"><code>null</code></td><td class="f-tac">outer  =&gt; inner</td><td>最大日期，如果为空则不限制</td></tr>
             
-            <tr><td class="f-wsn"><code>data.readonly</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>false</code></td><td>是否只读</td></tr>
+            <tr><td class="f-wsn"><code>data.readonly</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>false</code></td><td class="f-tac">outer  =&gt; inner</td><td>是否只读</td></tr>
             
-            <tr><td class="f-wsn"><code>data.disabled</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>false</code></td><td>是否禁用</td></tr>
+            <tr><td class="f-wsn"><code>data.disabled</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>false</code></td><td class="f-tac">outer  =&gt; inner</td><td>是否禁用</td></tr>
             
-            <tr><td class="f-wsn"><code>data.visible</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>true</code></td><td>是否显示</td></tr>
+            <tr><td class="f-wsn"><code>data.visible</code></td><td class="f-wsn">boolean</td><td class="f-wsn"><code>true</code></td><td class="f-tac">outer  =&gt; inner</td><td>是否显示</td></tr>
             
-            <tr><td class="f-wsn"><code>data.class</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td>补充class</td></tr>
+            <tr><td class="f-wsn"><code>data.class</code></td><td class="f-wsn">string</td><td class="f-wsn"><code>&#39;&#39;</code></td><td class="f-tac">outer  =&gt; inner</td><td>补充class</td></tr>
             
         
     </tbody>
@@ -281,7 +262,10 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     <h4>Methods</h4>
     
     
-    <h5>calendar.addYear(year)</h5>
+    <h5>
+        
+        <div>calendar.addYear(year)</div>
+    </h5>
     <p>调整年份</p>
     <table>
         <thead>
@@ -294,10 +278,21 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
                 
             
         </tbody>
+        <thead>
+            <tr><th width="25%">返回值</th><th width="25%">类型</th><th width="50%" colspan="2">描述</th></tr>
+        </thead>
+        <tbody>
+            
+                <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">Date</td><td colspan="2">计算后的日期</td></tr>
+            
+        </tbody>
     </table>
     
     
-    <h5>calendar.addMonth(month)</h5>
+    <h5>
+        
+        <div>calendar.addMonth(month)</div>
+    </h5>
     <p>调整月份</p>
     <table>
         <thead>
@@ -310,10 +305,21 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
                 
             
         </tbody>
+        <thead>
+            <tr><th width="25%">返回值</th><th width="25%">类型</th><th width="50%" colspan="2">描述</th></tr>
+        </thead>
+        <tbody>
+            
+                <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">Date</td><td colspan="2">计算后的日期</td></tr>
+            
+        </tbody>
     </table>
     
     
-    <h5>calendar.select(date)</h5>
+    <h5>
+        
+        <div>calendar.select(date)</div>
+    </h5>
     <p>选择一个日期</p>
     <table>
         <thead>
@@ -326,10 +332,21 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
                 
             
         </tbody>
+        <thead>
+            <tr><th width="25%">返回值</th><th width="25%">类型</th><th width="50%" colspan="2">描述</th></tr>
+        </thead>
+        <tbody>
+            
+                <tr><td class="f-tac" colspan="4">无返回值</td></tr>
+            
+        </tbody>
     </table>
     
     
-    <h5>calendar.goToday()</h5>
+    <h5>
+        
+        <div>calendar.goToday()</div>
+    </h5>
     <p>回到今天</p>
     <table>
         <thead>
@@ -340,10 +357,21 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
                 <tr><td class="f-tac" colspan="4">无参数</td></tr>
             
         </tbody>
+        <thead>
+            <tr><th width="25%">返回值</th><th width="25%">类型</th><th width="50%" colspan="2">描述</th></tr>
+        </thead>
+        <tbody>
+            
+                <tr><td class="f-tac" colspan="4">无返回值</td></tr>
+            
+        </tbody>
     </table>
     
     
-    <h5>calendar.isOutOfRange(date)</h5>
+    <h5>
+        
+        <div>calendar.isOutOfRange(date)</div>
+    </h5>
     <p>是否超出规定的日期范围</p>
     <table>
         <thead>
@@ -354,6 +382,14 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
                 
                 <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">Date</td><td class="f-wsn"></td><td>待测的日期</td></tr>
                 
+            
+        </tbody>
+        <thead>
+            <tr><th width="25%">返回值</th><th width="25%">类型</th><th width="50%" colspan="2">描述</th></tr>
+        </thead>
+        <tbody>
+            
+                <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">boolean | Date</td><td colspan="2">如果没有超出日期范围，则返回false；如果超出日期范围，则返回范围边界的日期</td></tr>
             
         </tbody>
     </table>
@@ -422,7 +458,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 </div>
 <a href="#" class="m-gotop"></a>
 <script src="../vendor/regular.min.js"></script>
-<script src="../vendor/marked.min.js"></script>
+<!-- script src="../vendor/marked.min.js"></script -->
 <script src="../js/regular-ui.min.js"></script>
 <script>
 var _ = RGUI._;
@@ -443,7 +479,7 @@ var themeSelect = new RGUI.Select2({
 
 // 生成tabs
 (function() {
-    var $examples = document.getElementsByClassName('m-example');
+    var $examples = $$('.m-example');
 
     for(var i = 0; i < $examples.length; i++) {
         var $example = $examples[i];
@@ -499,16 +535,16 @@ var index = 0;
 <calendar date="2008-08-08" />
     */})
 var component = new RGUI.Component({
-    template: template,
+    template: template
 });
     component.$inject($$(".m-example")[index]);
 })(index++);
 (function(index) {
     var template = RGUI._.multiline(function(){/*
-<calendar disabled={true} />
+<calendar disabled />
     */})
 var component = new RGUI.Component({
-    template: template,
+    template: template
 });
     component.$inject($$(".m-example")[index]);
 })(index++);
@@ -555,7 +591,7 @@ var component = new RGUI.Component({
     on-change={console.log('on-change:', '$event.date:', $event.date)} />
     */})
 var component = new RGUI.Component({
-    template: template,
+    template: template
 });
     component.$inject($$(".m-example")[index]);
 })(index++);
