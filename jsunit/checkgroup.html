@@ -11,6 +11,19 @@
 <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" id="j-themeCSS">
+<!--[if lt IE9]> 
+<script> 
+(function() {
+    if (! 
+    /*@cc_on!@*/
+    0) return;
+    var e = 'abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video'.split(', ');
+    var i= e.length;
+    while (i--)
+        document.createElement(e[i]);
+})();
+</script>
+<![endif]-->
 <script>
 // 该段代码是选择主题用的，与渲染有关，所以必须放前面。
 var relativePath = '../';
@@ -37,25 +50,25 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 </script>
 </head>
 <body>
-<div class="g-top">
+<div class="g-top g-top-fixed">
     <div class="g-topc">
-        <a class="m-logo" href="../index.html"><img src="../img/logo-v1.0-long-48.png" /></a>
+        <a class="u-logo" href="../index.html"><h1>Regular UI</h1></a>
         <ul class="m-navbar f-fr">
             
             
             <li><a href="../start/quickstart.html">开始使用</a></li>
             
             
-            <li><a href="../cssunit/index.html">CSS元件</a></li>
+            <li><a href="../cssunit/base.html">CSS元件</a></li>
             
             
-            <li><a href="../cssmodule/index.html">CSS模块</a></li>
+            <li><a href="../cssmodule/navbar.html">CSS模块</a></li>
             
             
-            <li class="z-crt"><a href="../jsunit/index.html">JS元件</a></li>
+            <li class="z-crt"><a href="../jsunit/dropdown.html">JS元件</a></li>
             
             
-            <li><a href="../jsmodule/index.html">JS模块</a></li>
+            <li><a href="../jsmodule/tabs.html">JS模块</a></li>
             
             <li id="j-themeSelect"></li>
         </ul>
@@ -68,13 +81,17 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li class="sidebar_group"><span>导航类</span></li>
         
-        <li><a href="../jsunit/dropdown.html">下拉菜单<small> Dropdown</small>
+        <li><a href="../jsunit/dropdown.html" >下拉菜单<small> Dropdown</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
         
         </a></li>
         
         
         
-        <li><a href="../jsunit/menu.html">多级菜单<small> Menu</small>
+        <li><a href="../jsunit/menu.html" >多级菜单<small> Menu</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
         
         </a></li>
         
@@ -82,71 +99,91 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li class="sidebar_group"><span>表单类</span></li>
         
-        <li><a href="../jsunit/input2.html">输入扩展<small> Input2</small>
+        <li><a href="../jsunit/input2.html" >输入扩展<small> Input2</small>
+        
+            <span class="u-badge2 u-badge2-beta" title="该组件的部分功能还不太稳定"></span>
         
         </a></li>
         
         
         
-        <li><a href="../jsunit/textarea2.html">多行输入扩展<small> TextArea2</small>
+        <li><a href="../jsunit/textarea2.html" >多行输入扩展<small> TextArea2</small>
+        
+            <span class="u-badge2 u-badge2-beta" title="该组件的部分功能还不太稳定"></span>
         
         </a></li>
         
         
         
-        <li><a href="../jsunit/numberinput.html">数字输入<small> NumberInput</small>
-        
-        </a></li>
-        
-        
-        
-        
-        <li><a href="../jsunit/check2.html">多选按钮<small> Check2</small>
-        
-        </a></li>
-        
-        
-        
-        <li class="z-crt"><a href="../jsunit/checkgroup.html">多选组<small> CheckGroup</small>
-        
-        </a></li>
-        
-        
-        
-        <li><a href="../jsunit/radiogroup.html">单选组<small> RadioGroup</small>
-        
-        </a></li>
-        
-        
-        
-        <li><a href="../jsunit/select2.html">选择扩展<small> Select2</small>
-        
-        </a></li>
-        
-        
-        
-        <li><a href="../jsunit/select2group.html">多级选择<small> Select2Group</small>
-        
-        </a></li>
-        
-        
-        
-        <li><a href="../jsunit/treeselect.html">树型选择<small> TreeSelect</small>
-        
-        </a></li>
-        
-        
-        
-        <li><a href="../jsunit/suggest.html">自动提示<small> Suggest</small>
+        <li><a href="../jsunit/numberinput.html" >数字输入<small> NumberInput</small>
         
         </a></li>
         
         
         
         
+        <li><a href="../jsunit/check2.html" >多选按钮<small> Check2</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
+        
+        </a></li>
         
         
-        <li><a href="../jsunit/uploader.html">上传<small> Uploader</small>
+        
+        <li class="z-crt"><a href="../jsunit/checkgroup.html" >多选组<small> CheckGroup</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
+        
+        </a></li>
+        
+        
+        
+        <li><a href="../jsunit/radiogroup.html" >单选组<small> RadioGroup</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
+        
+        </a></li>
+        
+        
+        
+        <li><a href="../jsunit/select2.html" >选择扩展<small> Select2</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
+        
+        </a></li>
+        
+        
+        
+        <li><a href="../jsunit/select2group.html" >多级选择<small> Select2Group</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
+        
+        </a></li>
+        
+        
+        
+        <li><a href="../jsunit/treeselect.html" >树型选择<small> TreeSelect</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
+        
+        </a></li>
+        
+        
+        
+        <li><a href="../jsunit/suggest.html" >自动提示<small> Suggest</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
+        
+        </a></li>
+        
+        
+        
+        
+        
+        
+        <li><a href="../jsunit/uploader.html" >上传<small> Uploader</small>
+        
+            <span class="u-badge2 u-badge2-beta" title="该组件的部分功能还不太稳定"></span>
         
         </a></li>
         
@@ -154,19 +191,25 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li class="sidebar_group"><span>日期类</span></li>
         
-        <li><a href="../jsunit/datepicker.html">日期选择<small> DatePicker</small>
+        <li><a href="../jsunit/datepicker.html" >日期选择<small> DatePicker</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
         
         </a></li>
         
         
         
-        <li><a href="../jsunit/timepicker.html">时间选择<small> TimePicker</small>
+        <li><a href="../jsunit/timepicker.html" >时间选择<small> TimePicker</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
         
         </a></li>
         
         
         
-        <li><a href="../jsunit/datetimepicker.html">日期时间选择<small> DateTimePicker</small>
+        <li><a href="../jsunit/datetimepicker.html" >日期时间选择<small> DateTimePicker</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
         
         </a></li>
         
@@ -175,19 +218,25 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li class="sidebar_group"><span>其他</span></li>
         
-        <li><a href="../jsunit/progress.html">进度条<small> Progress</small>
+        <li><a href="../jsunit/progress.html" >进度条<small> Progress</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
         
         </a></li>
         
         
         
-        <li><a href="../jsunit/loading.html">加载中<small> Loading</small>
+        <li><a href="../jsunit/loading.html" >加载中<small> Loading</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
         
         </a></li>
         
         
         
-        <li><a href="../jsunit/gotop.html">回到顶部<small> Gotop</small>
+        <li><a href="../jsunit/gotop.html" >回到顶部<small> Gotop</small>
+        
+            <span class="u-badge2 u-badge2-beta" title="该组件的部分功能还不太稳定"></span>
         
         </a></li>
         
@@ -381,10 +430,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     
     
     
-        <h5>
-            <div class="u-text u-text-muted">@deprecated</div>
-            <div>checkGroup.$updateSource()</div>
-        </h5>
+        <h5><span class="u-text u-text-muted">@deprecated</span> checkGroup.$updateSource()</h5>
         <p>从service中更新数据源</p>
         <table>
             <thead>
@@ -417,7 +463,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     </article>
 </div></div></div><div class="g-ft">
     <footer class="m-footer">
-        <p><a href="../index.html" class="footer_logo"><img src="../img/logo-v1.0-64.png" /></p>
+        <p><a href="../index.html" class="footer_logo"><img src="../img/logo-v2.0-bg-48.png" /></p>
         <p>
             <a href="https://github.com/regular-ui/regular-ui" target="_blank">GitHub</a> |
             <a href="https://github.com/regular-ui/regular-ui/issues" target="_blank">Issues</a> |
@@ -427,11 +473,17 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         <p>Licensed under <a href="https://github.com/regular-ui/regular-ui/blob/master/LICENSE" target="_blank">MIT license</a>.</p>
     </footer>
 </div>
-<a href="#" class="m-gotop"></a>
 <script src="../vendor/regular.min.js"></script>
 <!-- script src="../vendor/marked.min.js"></script -->
 <script src="../js/regular-ui.min.js"></script>
 <script>
+if(!('remove' in Element.prototype))
+    Element.prototype.remove = function() {
+        if(this.parentNode) {
+            this.parentNode.removeChild(this);
+        }
+    };
+
 var _ = RGUI._;
 var $$ = function(selector){return document.querySelectorAll(selector)};
 

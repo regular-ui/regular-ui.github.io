@@ -11,6 +11,19 @@
 <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" id="j-themeCSS">
+<!--[if lt IE9]> 
+<script> 
+(function() {
+    if (! 
+    /*@cc_on!@*/
+    0) return;
+    var e = 'abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video'.split(', ');
+    var i= e.length;
+    while (i--)
+        document.createElement(e[i]);
+})();
+</script>
+<![endif]-->
 <script>
 // 该段代码是选择主题用的，与渲染有关，所以必须放前面。
 var relativePath = '../';
@@ -37,25 +50,25 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 </script>
 </head>
 <body>
-<div class="g-top">
+<div class="g-top g-top-fixed">
     <div class="g-topc">
-        <a class="m-logo" href="../index.html"><img src="../img/logo-v1.0-long-48.png" /></a>
+        <a class="u-logo" href="../index.html"><h1>Regular UI</h1></a>
         <ul class="m-navbar f-fr">
             
             
             <li class="z-crt"><a href="../start/quickstart.html">开始使用</a></li>
             
             
-            <li><a href="../cssunit/index.html">CSS元件</a></li>
+            <li><a href="../cssunit/base.html">CSS元件</a></li>
             
             
-            <li><a href="../cssmodule/index.html">CSS模块</a></li>
+            <li><a href="../cssmodule/navbar.html">CSS模块</a></li>
             
             
-            <li><a href="../jsunit/index.html">JS元件</a></li>
+            <li><a href="../jsunit/dropdown.html">JS元件</a></li>
             
             
-            <li><a href="../jsmodule/index.html">JS模块</a></li>
+            <li><a href="../jsmodule/tabs.html">JS模块</a></li>
             
             <li id="j-themeSelect"></li>
         </ul>
@@ -66,31 +79,39 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         
         
-        <li class="z-crt"><a href="../start/quickstart.html">快速开始<small> QuickStart</small>
+        <li class="z-crt"><a href="../start/quickstart.html" >快速开始<small> QuickStart</small>
         
         </a></li>
         
         
         
-        <li><a href="../start/developer.html">开发者<small> Developer</small>
+        <li><a href="../start/feature.html" >特性<small> Feature</small>
         
         </a></li>
         
         
         
-        <li><a href="../start/structure.html">项目结构<small> Structure</small>
+        <li><a href="https://github.com/regular-ui/regular-ui/releases" target=&#34;_blank&#34;>更新日志<small> ChangeLog</small>
         
         </a></li>
         
         
         
-        <li><a href="../start/rule.html">规范<small> Rule</small>
+        <li class="sidebar_group"><span>开发者</span></li>
+        
+        <li><a href="../start/modular.html" >模块化<small> Modular</small>
         
         </a></li>
         
         
         
-        <li><a href="../start/todo.html">后续开发<small> Todo</small>
+        <li><a href="../start/structure.html" >项目结构<small> Structure</small>
+        
+        </a></li>
+        
+        
+        
+        <li><a href="../start/rule.html" >规范<small> Rule</small>
         
         </a></li>
         
@@ -100,52 +121,35 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <h2>快速开始<small> QuickStart</small></h2>
         
-        <h3 id="-">下载与引入</h3>
-<div class="u-message u-message-info">
-    <i class="message_icon u-icon u-icon-info-circle"></i> 提示：使用Regular UI要先引入Regular。
-</div>
-
-<p>下载Regular UI并在页面中引入，有以下几种方式：</p>
-<h4 id="-github-">直接在GitHub上下载最新发布</h4>
-<p><a class="u-btn u-btn-primary u-btn-lg" target="_blank" href="https://github.com/regular-ui/regular-ui-bower/releases/latest">下载Regular UI 0.1</a></p>
-<p>在HTML页面中添加以下代码：</p>
-<pre class="lang-html"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">link</span> <span class="cm-attribute">rel</span>=<span class="cm-string">&quot;stylesheet&quot;</span> <span class="cm-attribute">href</span>=<span class="cm-string">&quot;regular-ui/css/regular-ui.default.min.css&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tagcm-error">head</span><span class="cm-tagcm-bracketcm-error">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;regular-ui/vendor/regular.min.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;regular-ui/js/regular-ui.min.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
-</code></pre>
-<h4 id="-bower-">使用Bower下载</h4>
+        <h4 id="1-">1. 下载</h4>
+<p>下载Regular UI有以下几种方式：</p>
+<h5 id="-github-">直接在GitHub上下载最新发布</h5>
+<p><a class="u-btn" target="_blank" href="https://github.com/regular-ui/regular-ui/releases/latest">下载Regular UI 0.1</a></p>
+<h5 id="-bower-">使用Bower下载</h5>
 <pre class="lang-shell"><code>bower install regular-ui
 </code></pre>
-<p>在HTML页面中添加以下代码：</p>
-<pre class="lang-html"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">link</span> <span class="cm-attribute">rel</span>=<span class="cm-string">&quot;stylesheet&quot;</span> <span class="cm-attribute">href</span>=<span class="cm-string">&quot;bower_components/regular-ui/css/regular-ui.default.min.css&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tagcm-error">head</span><span class="cm-tagcm-bracketcm-error">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;bower_components/regular-ui/vendor/regular.min.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;bower_components/regular-ui/js/regular-ui.min.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
-</code></pre>
-<h4 id="-npm-">使用NPM下载</h4>
+<h5 id="-npm-">使用NPM下载</h5>
 <pre class="lang-shell"><code><span class="cm-builtin">npm</span> install regular-ui
 </code></pre>
-<p>在HTML页面中添加以下代码：</p>
+<h4 id="2-">2. 引入</h4>
+<p>创建一个HTML页面，并添加以下代码：</p>
 <pre class="lang-html"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">link</span> <span class="cm-attribute">rel</span>=<span class="cm-string">&quot;stylesheet&quot;</span> <span class="cm-attribute">href</span>=<span class="cm-string">&quot;node_modules/regular-ui/dist/css/regular-ui.default.min.css&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">link</span> <span class="cm-attribute">rel</span>=<span class="cm-string">&quot;stylesheet&quot;</span> <span class="cm-attribute">href</span>=<span class="cm-string">&quot;**/regular-ui/css/regular-ui.default.min.css&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
 <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tagcm-error">head</span><span class="cm-tagcm-bracketcm-error">&gt;</span>
 <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;node_modules/regular-ui/dist/vendor/regular.min.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;node_modules/regular-ui/dist/js/regular-ui.min.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;**/regular-ui/vendor/regular.min.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">&quot;**/regular-ui/js/regular-ui.min.js&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">script</span><span class="cm-tagcm-bracket">&gt;</span>
 <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
-<h3 id="-">使用组件</h3>
+<div class="u-message u-message-info">
+    <i class="message_icon u-icon u-icon-info-circle"></i> 提示：使用Regular UI要先引入RegularJS。
+</div>
+
+<h4 id="3-">3. 使用</h4>
 <p>如何在页面中使用Regular UI组件？</p>
 <p>下面以在页面中添加日历组件（RGUI.Calendar）为例：</p>
-<h4 id="-regular-">使用Regular模板创建组件</h4>
-<p>创建一个HTML页面，添加如下代码：</p>
+<h5 id="-regular-">使用Regular模板创建组件</h5>
+<p>在HTML页面中添加如下代码：</p>
 <pre class="lang-html"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
 <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">link</span> <span class="cm-attribute">rel</span>=<span class="cm-string">&quot;stylesheet&quot;</span> <span class="cm-attribute">href</span>=<span class="cm-string">&quot;regular-ui/css/regular-ui.default.min.css&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
 <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tagcm-error">head</span><span class="cm-tagcm-bracketcm-error">&gt;</span>
@@ -168,8 +172,8 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 </div>
 
 <p><a href="../demo/global/index.html">Demo &gt;&gt;</a></p>
-<h4 id="-js-">使用JS创建组件</h4>
-<p>创建一个HTML页面，添加如下代码：</p>
+<h5 id="-js-">使用JS创建组件</h5>
+<p>在HTML页面中添加如下代码：</p>
 <pre class="lang-html"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">head</span><span class="cm-tagcm-bracket">&gt;</span>
 <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">link</span> <span class="cm-attribute">rel</span>=<span class="cm-string">&quot;stylesheet&quot;</span> <span class="cm-attribute">href</span>=<span class="cm-string">&quot;regular-ui/css/regular-ui.default.min.css&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
 <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tagcm-error">head</span><span class="cm-tagcm-bracketcm-error">&gt;</span>
@@ -183,13 +187,15 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">body</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
 <p><a href="../demo/global/index2.html">Demo &gt;&gt;</a></p>
-<p>Regular的详细使用请参考<a href="http://regularjs.github.io/guide/zh/">Regular指南</a>。</p>
+<blockquote>
+<p>RegularJS的详细使用请参考<a href="http://regularjs.github.io">RegularJS指南</a>。</p>
+</blockquote>
 
         
     </article>
 </div></div></div><div class="g-ft">
     <footer class="m-footer">
-        <p><a href="../index.html" class="footer_logo"><img src="../img/logo-v1.0-64.png" /></p>
+        <p><a href="../index.html" class="footer_logo"><img src="../img/logo-v2.0-bg-48.png" /></p>
         <p>
             <a href="https://github.com/regular-ui/regular-ui" target="_blank">GitHub</a> |
             <a href="https://github.com/regular-ui/regular-ui/issues" target="_blank">Issues</a> |
@@ -199,11 +205,17 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         <p>Licensed under <a href="https://github.com/regular-ui/regular-ui/blob/master/LICENSE" target="_blank">MIT license</a>.</p>
     </footer>
 </div>
-<a href="#" class="m-gotop"></a>
 <script src="../vendor/regular.min.js"></script>
 <!-- script src="../vendor/marked.min.js"></script -->
 <script src="../js/regular-ui.min.js"></script>
 <script>
+if(!('remove' in Element.prototype))
+    Element.prototype.remove = function() {
+        if(this.parentNode) {
+            this.parentNode.removeChild(this);
+        }
+    };
+
 var _ = RGUI._;
 var $$ = function(selector){return document.querySelectorAll(selector)};
 

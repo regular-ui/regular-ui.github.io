@@ -11,6 +11,19 @@
 <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" id="j-themeCSS">
+<!--[if lt IE9]> 
+<script> 
+(function() {
+    if (! 
+    /*@cc_on!@*/
+    0) return;
+    var e = 'abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video'.split(', ');
+    var i= e.length;
+    while (i--)
+        document.createElement(e[i]);
+})();
+</script>
+<![endif]-->
 <script>
 // 该段代码是选择主题用的，与渲染有关，所以必须放前面。
 var relativePath = '../';
@@ -37,25 +50,25 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 </script>
 </head>
 <body>
-<div class="g-top">
+<div class="g-top g-top-fixed">
     <div class="g-topc">
-        <a class="m-logo" href="../index.html"><img src="../img/logo-v1.0-long-48.png" /></a>
+        <a class="u-logo" href="../index.html"><h1>Regular UI</h1></a>
         <ul class="m-navbar f-fr">
             
             
             <li class="z-crt"><a href="../start/quickstart.html">开始使用</a></li>
             
             
-            <li><a href="../cssunit/index.html">CSS元件</a></li>
+            <li><a href="../cssunit/base.html">CSS元件</a></li>
             
             
-            <li><a href="../cssmodule/index.html">CSS模块</a></li>
+            <li><a href="../cssmodule/navbar.html">CSS模块</a></li>
             
             
-            <li><a href="../jsunit/index.html">JS元件</a></li>
+            <li><a href="../jsunit/dropdown.html">JS元件</a></li>
             
             
-            <li><a href="../jsmodule/index.html">JS模块</a></li>
+            <li><a href="../jsmodule/tabs.html">JS模块</a></li>
             
             <li id="j-themeSelect"></li>
         </ul>
@@ -66,31 +79,39 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         
         
-        <li><a href="../start/quickstart.html">快速开始<small> QuickStart</small>
+        <li><a href="../start/quickstart.html" >快速开始<small> QuickStart</small>
         
         </a></li>
         
         
         
-        <li><a href="../start/developer.html">开发者<small> Developer</small>
+        <li class="z-crt"><a href="../start/feature.html" >特性<small> Feature</small>
         
         </a></li>
         
         
         
-        <li><a href="../start/structure.html">项目结构<small> Structure</small>
+        <li><a href="https://github.com/regular-ui/regular-ui/releases" target=&#34;_blank&#34;>更新日志<small> ChangeLog</small>
         
         </a></li>
         
         
         
-        <li><a href="../start/rule.html">规范<small> Rule</small>
+        <li class="sidebar_group"><span>开发者</span></li>
+        
+        <li><a href="../start/modular.html" >模块化<small> Modular</small>
         
         </a></li>
         
         
         
-        <li><a href="../start/todo.html">后续开发<small> Todo</small>
+        <li><a href="../start/structure.html" >项目结构<small> Structure</small>
+        
+        </a></li>
+        
+        
+        
+        <li><a href="../start/rule.html" >规范<small> Rule</small>
         
         </a></li>
         
@@ -98,12 +119,45 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 </div><div class="g-mn">
     <article class="m-article">
         
+        <h2>特性<small> Feature</small></h2>
         
+        <h4 id="-">兼容性</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="../img/chrome_48x48.png" alt="Chrome"></th>
+<th style="text-align:center"><img src="../img/firefox_48x48.png" alt="Firefox"></th>
+<th style="text-align:center"><img src="../img/internet-explorer_48x48.png" alt="IE"></th>
+<th style="text-align:center"><img src="../img/safari_48x48.png" alt="Safari"></th>
+<th style="text-align:center"><img src="../img/opera_48x48.png" alt="Opera"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Latest ✔</td>
+<td style="text-align:center">Latest ✔</td>
+<td style="text-align:center">IE8+</td>
+<td style="text-align:center">Latest ✔</td>
+<td style="text-align:center">Latest ✔</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-">后续开发</h4>
+<ul>
+<li>一大波组件</li>
+<li>兼容性测试</li>
+<li>代码优化</li>
+<li>文档优化</li>
+<li>移动端开发</li>
+<li>动画+特效</li>
+</ul>
+<p><em>尽请期待...</em></p>
+
         
     </article>
 </div></div></div><div class="g-ft">
     <footer class="m-footer">
-        <p><a href="../index.html" class="footer_logo"><img src="../img/logo-v1.0-64.png" /></p>
+        <p><a href="../index.html" class="footer_logo"><img src="../img/logo-v2.0-bg-48.png" /></p>
         <p>
             <a href="https://github.com/regular-ui/regular-ui" target="_blank">GitHub</a> |
             <a href="https://github.com/regular-ui/regular-ui/issues" target="_blank">Issues</a> |
@@ -113,11 +167,17 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         <p>Licensed under <a href="https://github.com/regular-ui/regular-ui/blob/master/LICENSE" target="_blank">MIT license</a>.</p>
     </footer>
 </div>
-<a href="#" class="m-gotop"></a>
 <script src="../vendor/regular.min.js"></script>
 <!-- script src="../vendor/marked.min.js"></script -->
 <script src="../js/regular-ui.min.js"></script>
 <script>
+if(!('remove' in Element.prototype))
+    Element.prototype.remove = function() {
+        if(this.parentNode) {
+            this.parentNode.removeChild(this);
+        }
+    };
+
 var _ = RGUI._;
 var $$ = function(selector){return document.querySelectorAll(selector)};
 

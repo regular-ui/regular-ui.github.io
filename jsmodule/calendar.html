@@ -11,6 +11,19 @@
 <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" id="j-themeCSS">
+<!--[if lt IE9]> 
+<script> 
+(function() {
+    if (! 
+    /*@cc_on!@*/
+    0) return;
+    var e = 'abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video'.split(', ');
+    var i= e.length;
+    while (i--)
+        document.createElement(e[i]);
+})();
+</script>
+<![endif]-->
 <script>
 // 该段代码是选择主题用的，与渲染有关，所以必须放前面。
 var relativePath = '../';
@@ -37,25 +50,25 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 </script>
 </head>
 <body>
-<div class="g-top">
+<div class="g-top g-top-fixed">
     <div class="g-topc">
-        <a class="m-logo" href="../index.html"><img src="../img/logo-v1.0-long-48.png" /></a>
+        <a class="u-logo" href="../index.html"><h1>Regular UI</h1></a>
         <ul class="m-navbar f-fr">
             
             
             <li><a href="../start/quickstart.html">开始使用</a></li>
             
             
-            <li><a href="../cssunit/index.html">CSS元件</a></li>
+            <li><a href="../cssunit/base.html">CSS元件</a></li>
             
             
-            <li><a href="../cssmodule/index.html">CSS模块</a></li>
+            <li><a href="../cssmodule/navbar.html">CSS模块</a></li>
             
             
-            <li><a href="../jsunit/index.html">JS元件</a></li>
+            <li><a href="../jsunit/dropdown.html">JS元件</a></li>
             
             
-            <li class="z-crt"><a href="../jsmodule/index.html">JS模块</a></li>
+            <li class="z-crt"><a href="../jsmodule/tabs.html">JS模块</a></li>
             
             <li id="j-themeSelect"></li>
         </ul>
@@ -68,19 +81,25 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li class="sidebar_group"><span>导航类</span></li>
         
-        <li><a href="../jsmodule/tabs.html">选项卡<small> Tabs</small>
+        <li><a href="../jsmodule/tabs.html" >选项卡<small> Tabs</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
         
         </a></li>
         
         
         
-        <li><a href="../jsmodule/collapse.html">折叠面板<small> Collapse</small>
+        <li><a href="../jsmodule/collapse.html" >折叠面板<small> Collapse</small>
+        
+            <span class="u-badge2 u-badge2-beta" title="该组件的部分功能还不太稳定"></span>
         
         </a></li>
         
         
         
-        <li><a href="../jsmodule/pager.html">分页器<small> Pager</small>
+        <li><a href="../jsmodule/pager.html" >分页器<small> Pager</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
         
         </a></li>
         
@@ -89,13 +108,17 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li class="sidebar_group"><span>窗口类</span></li>
         
-        <li><a href="../jsmodule/notify.html">通知<small> Notify</small>
+        <li><a href="../jsmodule/notify.html" >通知<small> Notify</small>
+        
+            <span class="u-badge2 u-badge2-beta" title="该组件的部分功能还不太稳定"></span>
         
         </a></li>
         
         
         
-        <li><a href="../jsmodule/modal.html">模态对话框<small> Modal</small>
+        <li><a href="../jsmodule/modal.html" >模态对话框<small> Modal</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
         
         </a></li>
         
@@ -107,14 +130,27 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li class="sidebar_group"><span>数据类</span></li>
         
-        <li><a href="../jsmodule/listview.html">列表视图<small> ListView</small>
+        <li><a href="../jsmodule/listview.html" >列表视图<small> ListView</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
         
         </a></li>
         
         
         
         
-        <li><a href="../jsmodule/treeview.html">树型视图<small> TreeView</small>
+        
+        <li><a href="../jsmodule/treeview.html" >树型视图<small> TreeView</small>
+        
+            <span class="u-badge2 u-badge2-beta" title="该组件的部分功能还不太稳定"></span>
+        
+        </a></li>
+        
+        
+        
+        <li><a href="../jsmodule/multitreeview.html" >多选树型视图<small> MultiTreeView</small>
+        
+            <span class="u-badge2 u-badge2-new" title="该组件最近刚添加到库中"></span>
         
         </a></li>
         
@@ -123,7 +159,9 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li class="sidebar_group"><span>日期类</span></li>
         
-        <li class="z-crt"><a href="../jsmodule/calendar.html">日历<small> Calendar</small>
+        <li class="z-crt"><a href="../jsmodule/calendar.html" >日历<small> Calendar</small>
+        
+            <span class="u-badge2 u-badge2-stable" title="该组件目前已比较稳定"></span>
         
         </a></li>
         
@@ -134,13 +172,17 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li class="sidebar_group"><span>编辑器类</span></li>
         
-        <li><a href="../jsmodule/htmleditor.html">HTML编辑器<small> HTMLEditor</small>
+        <li><a href="../jsmodule/htmleditor.html" >HTML编辑器<small> HTMLEditor</small>
+        
+            <span class="u-badge2 u-badge2-beta" title="该组件的部分功能还不太稳定"></span>
         
         </a></li>
         
         
         
-        <li><a href="../jsmodule/markeditor.html">Markdown编辑器<small> MarkEditor</small>
+        <li><a href="../jsmodule/markeditor.html" >Markdown编辑器<small> MarkEditor</small>
+        
+            <span class="u-badge2 u-badge2-beta" title="该组件的部分功能还不太稳定"></span>
         
         </a></li>
         
@@ -151,19 +193,25 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         
         <li class="sidebar_group"><span>其他</span></li>
         
-        <li><a href="../jsmodule/validation.html">表单验证<small> Validation</small>
+        <li><a href="../jsmodule/validation.html" >表单验证<small> Validation</small>
+        
+            <span class="u-badge2 u-badge2-beta" title="该组件的部分功能还不太稳定"></span>
         
         </a></li>
         
         
         
-        <li><a href="../jsmodule/draggable.html">拖拽<small> Draggable</small>
+        <li><a href="../jsmodule/draggable.html" >拖拽<small> Draggable</small>
+        
+            <span class="u-badge2 u-badge2-new" title="该组件最近刚添加到库中"></span>
         
         </a></li>
         
         
         
-        <li><a href="../jsmodule/droppable.html">放置<small> Droppable</small>
+        <li><a href="../jsmodule/droppable.html" >放置<small> Droppable</small>
+        
+            <span class="u-badge2 u-badge2-new" title="该组件最近刚添加到库中"></span>
         
         </a></li>
         
@@ -177,8 +225,10 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <h4 id="-">基本形式</h4>
 <div class="m-example"></div>
 
-<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-tagcm-bracket">/&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">date</span>=<span class="cm-string">&quot;2008-08-08&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;g-row&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;g-col&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-tagcm-bracket">/&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;g-col&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">date</span>=<span class="cm-string">&quot;2008-08-08&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
 <h4 id="-">禁用组件</h4>
 <div class="m-example"></div>
@@ -188,9 +238,13 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <h4 id="-">日期范围</h4>
 <div class="m-example"></div>
 
-<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">minDate</span>=<span class="cm-attribute">{minDate}</span> <span class="cm-attribute">maxDate</span>=<span class="cm-attribute">{maxDate}</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">minDate</span>=<span class="cm-string">&quot;2008-08-08&quot;</span> <span class="cm-attribute">maxDate</span>=<span class="cm-string">&quot;2008-08-16&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">ref</span>=<span class="cm-string">&quot;customCalendar&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span>
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;g-row&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;g-col&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">minDate</span>=<span class="cm-attribute">{minDate}</span> <span class="cm-attribute">maxDate</span>=<span class="cm-attribute">{maxDate}</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;g-col&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">minDate</span>=<span class="cm-string">&quot;2008-08-08&quot;</span> <span class="cm-attribute">maxDate</span>=<span class="cm-string">&quot;2008-08-16&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;g-row&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;g-col&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">ref</span>=<span class="cm-string">&quot;customCalendar&quot;</span> <span class="cm-tagcm-bracket">/&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
 <pre class="lang-javascript"><code><span class="cm-keyword">var</span> <span class="cm-variable">component</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">RGUI</span>.<span class="cm-property">Component</span>({
     <span class="cm-property">template</span>: <span class="cm-variable">template</span>,
@@ -210,8 +264,10 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
 <h4 id="-">数据绑定</h4>
 <div class="m-example"></div>
 
-<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">date</span>=<span class="cm-attribute">{date}</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span>
-<span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">date</span>=<span class="cm-attribute">{date}</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span>
+<pre class="lang-xml"><code><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;g-row&quot;</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;g-col&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">date</span>=<span class="cm-attribute">{date}</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
+    <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">&quot;g-col&quot;</span><span class="cm-tagcm-bracket">&gt;</span><span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">calendar</span> <span class="cm-attribute">date</span>=<span class="cm-attribute">{date}</span> <span class="cm-tagcm-bracketcm-error">/&gt;</span><span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
+<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tagcm-bracket">&gt;</span>
 <span class="cm-tagcm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tagcm-bracket">&gt;</span>当前选择的日期为：{date | format: &#39;yyyy-MM-dd&#39;}<span class="cm-tagcm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tagcm-bracket">&gt;</span>
 </code></pre>
 <pre class="lang-javascript"><code><span class="cm-keyword">var</span> <span class="cm-variable">component</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">RGUI</span>.<span class="cm-property">Component</span>({
@@ -272,10 +328,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     <h4>Methods</h4>
     
     
-    <h5>
-        
-        <div>calendar.addYear(year)</div>
-    </h5>
+    <h5>calendar.addYear(year)</h5>
     <p>调整年份</p>
     <table>
         <thead>
@@ -299,10 +352,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     </table>
     
     
-    <h5>
-        
-        <div>calendar.addMonth(month)</div>
-    </h5>
+    <h5>calendar.addMonth(month)</h5>
     <p>调整月份</p>
     <table>
         <thead>
@@ -326,10 +376,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     </table>
     
     
-    <h5>
-        
-        <div>calendar.select(date)</div>
-    </h5>
+    <h5>calendar.select(date)</h5>
     <p>选择一个日期</p>
     <table>
         <thead>
@@ -353,10 +400,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     </table>
     
     
-    <h5>
-        
-        <div>calendar.goToday()</div>
-    </h5>
+    <h5>calendar.goToday()</h5>
     <p>回到今天</p>
     <table>
         <thead>
@@ -378,10 +422,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     </table>
     
     
-    <h5>
-        
-        <div>calendar.isOutOfRange(date)</div>
-    </h5>
+    <h5>calendar.isOutOfRange(date)</h5>
     <p>是否超出规定的日期范围</p>
     <table>
         <thead>
@@ -399,7 +440,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         </thead>
         <tbody>
             
-                <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">boolean&lt;br&gt;Date</td><td colspan="2">如果没有超出日期范围，则返回false；如果超出日期范围，则返回范围边界的日期</td></tr>
+                <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">boolean<br>Date</td><td colspan="2">如果没有超出日期范围，则返回false；如果超出日期范围，则返回范围边界的日期</td></tr>
             
         </tbody>
     </table>
@@ -426,7 +467,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         <tbody>
             
                 
-                <tr><td class="f-wsn"><code>source</code></td><td class="f-wsn">object</td><td class="f-wsn">事件发起对象</td></tr>
+                <tr><td class="f-wsn"><code>sender</code></td><td class="f-wsn">object</td><td class="f-wsn">事件发送对象</td></tr>
                 
                 <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">object</td><td class="f-wsn">改变后的日期</td></tr>
                 
@@ -444,7 +485,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         <tbody>
             
                 
-                <tr><td class="f-wsn"><code>source</code></td><td class="f-wsn">object</td><td class="f-wsn">事件发起对象</td></tr>
+                <tr><td class="f-wsn"><code>sender</code></td><td class="f-wsn">object</td><td class="f-wsn">事件发送对象</td></tr>
                 
                 <tr><td class="f-wsn"><code>date</code></td><td class="f-wsn">object</td><td class="f-wsn">当前选择的日期</td></tr>
                 
@@ -460,7 +501,7 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
     </article>
 </div></div></div><div class="g-ft">
     <footer class="m-footer">
-        <p><a href="../index.html" class="footer_logo"><img src="../img/logo-v1.0-64.png" /></p>
+        <p><a href="../index.html" class="footer_logo"><img src="../img/logo-v2.0-bg-48.png" /></p>
         <p>
             <a href="https://github.com/regular-ui/regular-ui" target="_blank">GitHub</a> |
             <a href="https://github.com/regular-ui/regular-ui/issues" target="_blank">Issues</a> |
@@ -470,11 +511,17 @@ themeCSS.href = window.relativePath + 'css/doc.' + selectedTheme.name + '.min.cs
         <p>Licensed under <a href="https://github.com/regular-ui/regular-ui/blob/master/LICENSE" target="_blank">MIT license</a>.</p>
     </footer>
 </div>
-<a href="#" class="m-gotop"></a>
 <script src="../vendor/regular.min.js"></script>
 <!-- script src="../vendor/marked.min.js"></script -->
 <script src="../js/regular-ui.min.js"></script>
 <script>
+if(!('remove' in Element.prototype))
+    Element.prototype.remove = function() {
+        if(this.parentNode) {
+            this.parentNode.removeChild(this);
+        }
+    };
+
 var _ = RGUI._;
 var $$ = function(selector){return document.querySelectorAll(selector)};
 
@@ -545,8 +592,10 @@ var themeSelect = new RGUI.Select2({
 var index = 0;
 (function(index) {
     var template = RGUI._.multiline(function(){/*
-<calendar />
-<calendar date="2008-08-08" />
+<div class="g-row">
+    <div class="g-col"><calendar /></div>
+    <div class="g-col"><calendar date="2008-08-08" /></div>
+</div>
     */})
 var component = new RGUI.Component({
     template: template
@@ -564,9 +613,13 @@ var component = new RGUI.Component({
 })(index++);
 (function(index) {
     var template = RGUI._.multiline(function(){/*
-<calendar minDate={minDate} maxDate={maxDate} />
-<calendar minDate="2008-08-08" maxDate="2008-08-16" />
-<calendar ref="customCalendar" />
+<div class="g-row">
+    <div class="g-col"><calendar minDate={minDate} maxDate={maxDate} /></div>
+    <div class="g-col"><calendar minDate="2008-08-08" maxDate="2008-08-16" /></div>
+</div>
+<div class="g-row">
+    <div class="g-col"><calendar ref="customCalendar" /></div>
+</div>
     */})
 var component = new RGUI.Component({
     template: template,
@@ -586,8 +639,10 @@ var component = new RGUI.Component({
 })(index++);
 (function(index) {
     var template = RGUI._.multiline(function(){/*
-<calendar date={date} />
-<calendar date={date} />
+<div class="g-row">
+    <div class="g-col"><calendar date={date} /></div>
+    <div class="g-col"><calendar date={date} /></div>
+</div>
 <p>当前选择的日期为：{date | format: 'yyyy-MM-dd'}</p>
     */})
 var component = new RGUI.Component({
