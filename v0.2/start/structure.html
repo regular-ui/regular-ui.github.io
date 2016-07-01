@@ -163,13 +163,9 @@
     </footer>
 </div>
 <script src="../vendor/regular.min.js"></script>
+<script src="../vendor/polyfill.min.js"></script>
 <script src="../js/regular-ui.min.js"></script>
-<script>
-var $$ = function(selector){return document.querySelectorAll(selector)};
-$$('.m-article > h2, .m-article > h3').forEach(function($heading) {
-    $heading.innerHTML = '<a href="#' + $heading.id + '">' + $heading.innerText + '</a>';
-});
-</script>
+<script src="../js/helper.js"></script>
 <script>
 
 </script>
