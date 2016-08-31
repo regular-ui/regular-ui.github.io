@@ -250,7 +250,7 @@
 <h3 id="regular规范">Regular规范</h3>
 <h4 id="组件声明">组件声明</h4>
 <ul>
-<li>每个组件必须在<code>config</code>中使用<code>Object.assign</code>显式声明默认数据。</li>
+<li>每个组件必须在<code>config</code>中使用<code>this.defaults</code>显式声明默认数据。</li>
 <li>使用<code>this.data</code>，放弃使用Regular中<code>config</code>或<code>init</code>中传入的<code>data</code>参数。</li>
 <li>数据操作放在<code>config</code>中处理，DOM操作放在<code>init</code>中处理，并且尽量不进行DOM操作。</li>
 </ul>
@@ -263,13 +263,13 @@
 <span class="cm-comment">     * @override</span>
 <span class="cm-comment">     */</span>
     <span class="cm-property">config</span>() {
-        <span class="cm-keyword">this</span>.<span class="cm-property">data</span> <span class="cm-operator">=</span> <span class="cm-variable">Object</span>.<span class="cm-property">assign</span>({
+        <span class="cm-keyword">this</span>.<span class="cm-property">defaults</span>({
             <span class="cm-property">title</span>: <span class="cm-string">&#39;提示&#39;</span>,
             <span class="cm-property">content</span>: <span class="cm-string">&#39;&#39;</span>,
             <span class="cm-property">okButton</span>: <span class="cm-atom">true</span>,
             <span class="cm-property">cancelButton</span>: <span class="cm-atom">false</span>,
             <span class="cm-property">draggable</span>: <span class="cm-atom">false</span>
-        }, <span class="cm-keyword">this</span>.<span class="cm-property">data</span>);
+        });
         <span class="cm-keyword">this</span>.<span class="cm-property">supr</span>();
     },
     <span class="cm-meta">...</span>
